@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Amal Lalgi</title>
+	<link rel="icon" href="assets/images/favicon/favicon.png"/>
+	<link rel="stylesheet" href="styles/css/style.css">
+	<link rel="stylesheet" href="assets/fontawesome/css/all.min.css"/>
+	<script src="scripts/js/script.js" defer></script>
+</head>
+<body>
+	<div class="home" id="home-loc"></div>
+	<!-- Navigation -->
+	<nav>
+		<div class="logo"><img src="assets/images/favicon/favicon.png" alt="logo"></div>
+		<ul class="Nav__Links">
+			<li><a href="#home-loc" class="home-loc">Home</a></li>
+			<li><a href="#about-loc" class="about-loc">About Me</a></li>
+			<li><a href="pages/works/index.html" target="blank" class="works-loc">My Works</a></li>
+			<li><a href="#contact-loc" class="contact-loc">Contact Me</a></li>
+		</ul>
+		<div class="burger">
+			<!-- <svg class="menu" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M128 170.666667h768v85.333333H128V170.666667z m256 298.666666h512v85.333334H384v-85.333334z m-256 298.666667h768v85.333333H128v-85.333333z"/></svg> -->
+			<div class="menu">MENU</div>
+			<div class="close">CLOSE</div>
+		</div>
+	</nav>
+	<!-- Main -->
+	<main>
+		<h1><span class="greeting">Gud Mornin'!</span> hello there! I am <span class="special" id="colorChange">Amal Lalgi</span></h1>
+		<h3>Full Stack Dev / UI/UX Design / Shell Scripting</h3>
+	</main>
+	<!-- pinned -->
+	<div class="pinned">
+		<h2 class="special__heading">pinned works</h2>
+		<div class="pinned__cont">
+			<img src="assets/images/cards/narutomaki-card.jpg" alt="online ramen shop">
+			<div class="desc">
+				<h2>Narutomaki</h2>
+				<hr class="hr--dashed">
+				<p>Order the best ramen right away! You've got plenty dishes to choose from. Experience taste like never before. We deliver as fast as a lightning bolt! Just warm up the broth, noodles and toppings and in less than 10 minutes you'll have the best ramen near you.</p>
+				<a href="#">VISIT ↗</a>
+			</div>
+		</div>
+	</div>
+	<!-- About -->
+	<div class="about" id="about-loc">
+		<div class="desc">
+			<h2 class="special__heading">about me</h2>
+			<hr class="hr--dashed">
+			<h3>digital crafzman</h3>
+			<p>Hello again! As I said, my name is Amal. I am a passionate full stack web developer (MERN Stack) and UI/UX Designer from Kerala, India. I love to design and code websites and web apps. I am also into Shell scripting and Machine Learning. And when I am not coding, I doze off in front of the TV watchin' Sitcoms and Anime! I'm currently on a quest to master full stack dev.</p>
+		</div>
+		<img src="assets/images/main/hero-(2).jpg" alt="Amal Lalgi">
+	</div>
+	<!-- Works -->
+	<div class="works" id="works-loc">
+		<h2 class="special__heading">works</h2>
+		<hr class="hr--dashed">
+		<p>see all of my Dev 'nd Design works one click away!  most of the works (open-source ones) are uploaded on  GitHub. My art works are published on my Pinterest and  DeviantArt handles.</p>
+		<a href="pages/works/index.html">SEE MY WORKS ↗</a>
+	</div>
+	<!-- skills -->
+	<div class="skills" id="skills-loc">
+		<h2 class="special__heading">my skill sets</h2>
+		<!-- <hr class="hr--dashed"> -->
+		<div class="cont">
+			<div class="skillset skillset-1">
+				<h3>FrontEnd Dev & Design</h3>
+				<ul>
+					<li>HTML, Markdown</li>
+					<li>CSS, Sass(SCSS)</li>
+					<li>React.js</li>
+					<li>Tailwind css</li>
+				</ul>
+			</div>
+			<div class="skillset skillset-2">
+				<h3>BackEnd Dev</h3>
+				<ul>
+					<li>JavaScript (ES6+)</li>
+					<li>JQuery</li>
+					<li>Node.js, Express.js</li>
+					<li>Next.js</li>
+				</ul>
+			</div>
+			<div class="skillset skillset-3">
+				<h3>Scripting</h3>
+				<ul>
+					<li>Python</li>
+					<li>[ NumPy, SciPy ]</li>
+					<li>[ Pandas, Matplotlib ]</li>
+					<li>Bash/Zsh/Pwsh</li>
+				</ul>
+			</div>
+			<div class="skillset skillset-4">
+				<h3>Database Management</h3>
+				<ul>
+					<li>MySQL</li>
+					<li>MongoDB</li>
+					<li>PostgreSQL</li>
+					<li>GraphQL</li>
+				</ul>
+			</div>
+			<div class="skillset skillset-5">
+				<h3>Tools and Tech</h3>
+				<ul>
+					<li>Sublime Text 💖</li>
+					<li>GitHub/Git</li>
+					<li>Adobe Photoshop</li>
+					<li>Adobe Illustrator</li>
+					<li>Figma</li>
+				</ul>
+			</div>
+			<div class="skillset skillset-6">
+				<h3>Fun Ones</h3>
+				<ul>
+					<li>Concept Art</li>
+					<li>Logos/Brand Designs</li>
+					<li>Web/App Design</li>
+					<li>Wallpaper Design</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- game -->
+	<div class="game" id="game">
+		<h2 class="special__heading">let's play a game</h2>
+		<hr class="hr--dashed">
+		<div class="cont">
+			<div class="cell cell-1" onclick="randomPokemon()">
+				<img src="assets/images/sprites/pokemon-sprites/Base/Pokemon-(106).png" alt="">
+			</div>
+			<div class="cell cell-2" onclick="randomPokemon()">
+				<img src="assets/images/sprites/pokemon-sprites/Base/Pokemon-(287).png" alt="">
+			</div>
+			<div class="cell cell-3" onclick="randomPokemon()">
+				<img src="assets/images/sprites/pokemon-sprites/Base/Pokemon-(478).png" alt="">
+			</div>
+		</div>
+		<hr class="hr--dashed">
+		<div class="luck">
+			<input type="text" class="code" placeholder="{ the secret word! }">
+			<button class="luckBtn">Feeling Lucky?</button>
+		</div>
+	</div>
+	<!-- contact -->
+	<div class="contact" id="contact-loc">
+		<h2 class="special__heading">let's get in touch</h2>
+		<div class="cont">
+			<div class="box social">
+				<a href="#">Instagram ↗</a>
+				<a href="#">Twitter ↗</a>
+				<a href="#">GitHub ↗</a>
+				<a href="#">Codepen ↗</a>
+				<a href="#">StackOverflow ↗</a>
+				<a href="#">Pintrest ↗</a>
+				<a href="#">DeviantArt ↗</a>
+				<a href="#">LinkedIn ↗</a>
+				<a href="#">Email ↗</a>
+			</div>
+			<div class="box form">
+				<form action="email">
+					<input type="text" placeholder="{ enter your name * }" required>
+					<input type="text" placeholder="{ enter your email id * }" required>
+					<input type="text" placeholder="{ enter the subject }">
+					<textarea name="message" id="msg" cols="30" rows="10" placeholder="{ type something! * }" required></textarea>
+					<div class="btns">
+						<button onclick="document.querySelector('form').reset()">CANCEL</button>
+						<input type="submit" value="SEND">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- footer -->
+	<footer>
+		<h4>designed and developed by <a href="#">Amal Lalgi</a></h4>
+		<div class="footer__icons">
+			<a target="blank" href="https://github.com/TheAmalLalgi/TheAmalLalgi.github.io"><i class="fas fa-folder"></i></a>
+			<a target="blank" href="https://instagram.com/_u/TheAmalLalgi"><i class="fab fa-instagram"></i></a>
+			<a target="blank" href="https://twitter.com/AmalLalgi"><i class="fab fa-twitter"></i></a>
+			<a target="blank" href="https://www.linkedin.com/in/amal-lalgi-8b193521a/"><i class="fab fa-linkedin"></i></a>
+			<a target="blank" href="https://www.deviantart.com/amallalgi"><i class="fab fa-deviantart"></i></a>
+			<a target="blank" href="https://dribbble.com/TheAmalLalgi"><i class="fab fa-dribbble"></i></a>
+			<a target="blank" href="https://www.behance.net/amallalgi"><i class="fab fa-behance"></i></a>
+			<a target="blank" href="https://codepen.io/theamallalgi"><i class="fab fa-codepen"></i></a>
+			<a target="blank" href="https://github.com/TheAmalLalgi"><i class="fab fa-github-alt"></i></a>
+		</div>
+		<div class="footer__nav">
+			<ul>
+				<li><a href="#home-loc">Home page</a></li>
+				<li><a href="#about-loc">About me</a></li>
+				<li><a href="pages/works/index.html">Art gallery</a></li>
+				<li><a href="pages/works/index.html">Code works</a></li>
+				<li><a href="#contact-loc">Contact me</a></li>
+				<li><a href="#game">Mini game</a></li>
+				<li><a href="#skills-loc">My skills</a></li>
+				<li><a href="pages/FAQ/faq.html">FAQ</a></li>
+			</ul>
+		</div>
+	</footer>
+</body>
+</html>
