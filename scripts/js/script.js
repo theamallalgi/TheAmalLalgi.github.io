@@ -71,9 +71,9 @@ const randomPokemon = () => {
             newImage3 = PokemonImages[randomIndex3];
             newImage4 = PokemonImages[randomIndex4];
 
-            document.querySelector('.cell-1 img').src = `./assets/images/sprites/pokemon-sprites/shiny/${newImage1}`;
-            document.querySelector('.cell-2 img').src = `./assets/images/sprites/pokemon-sprites/shiny/${newImage2}`;
-            document.querySelector('.cell-3 img').src = `./assets/images/sprites/pokemon-sprites/shiny/${newImage3}`;
+            document.querySelector('.cell-1 img').src = `https://raw.githubusercontent.com/TheAmalLalgi/TheAmalLalgi.github.io/main/assets/images/sprites/pokemon-sprites/shiny/${newImage1}`;
+            document.querySelector('.cell-2 img').src = `https://raw.githubusercontent.com/TheAmalLalgi/TheAmalLalgi.github.io/main/assets/images/sprites/pokemon-sprites/shiny/${newImage2}`;
+            document.querySelector('.cell-3 img').src = `https://raw.githubusercontent.com/TheAmalLalgi/TheAmalLalgi.github.io/main/assets/images/sprites/pokemon-sprites/shiny/${newImage3}`;
         }; shinyRandomSlots();
     } else {
         // Normal Encounters
@@ -88,9 +88,9 @@ const randomPokemon = () => {
             newImage3 = PokemonImages[randomIndex3];
             newImage4 = PokemonImages[randomIndex4];
 
-            document.querySelector('.cell-1 img').src = `./assets/images/sprites/pokemon-sprites/base/${newImage1}`;
-            document.querySelector('.cell-2 img').src = `./assets/images/sprites/pokemon-sprites/base/${newImage2}`;
-            document.querySelector('.cell-3 img').src = `./assets/images/sprites/pokemon-sprites/base/${newImage3}`;
+            document.querySelector('.cell-1 img').src = `https://raw.githubusercontent.com/TheAmalLalgi/TheAmalLalgi.github.io/main/assets/images/sprites/pokemon-sprites/base/${newImage1}`;
+            document.querySelector('.cell-2 img').src = `https://raw.githubusercontent.com/TheAmalLalgi/TheAmalLalgi.github.io/main/assets/images/sprites/pokemon-sprites/base/${newImage2}`;
+            document.querySelector('.cell-3 img').src = `https://raw.githubusercontent.com/TheAmalLalgi/TheAmalLalgi.github.io/main/assets/images/sprites/pokemon-sprites/base/${newImage3}`;
         }; randomSlots();
     }
 }; randomPokemon();
@@ -174,23 +174,23 @@ luckBtn.addEventListener('click', () => {
         // cheats
         case "pokecodebreak":
             codeField.value = "";
-            let imgLoc = `./assets/images/sprites/pokemon-sprites/base/${newImage4}`;
+            let imgLoc = `https://raw.githubusercontent.com/TheAmalLalgi/TheAmalLalgi.github.io/main/assets/images/sprites/pokemon-sprites/base/${newImage4}`;
             document.querySelector('.cell-1 img').src = imgLoc;
             document.querySelector('.cell-2 img').src = imgLoc;
             document.querySelector('.cell-3 img').src = imgLoc;
             break;
         case "shinypokecodebreak":
             codeField.value = "";
-            let ImgLoc = `./assets/images/sprites/pokemon-sprites/shiny/${newImage1}`;
+            let ImgLoc = `https://raw.githubusercontent.com/TheAmalLalgi/TheAmalLalgi.github.io/main/assets/images/sprites/pokemon-sprites/shiny/${newImage1}`;
             document.querySelector('.cell-1 img').src = ImgLoc;
             document.querySelector('.cell-2 img').src = ImgLoc;
             document.querySelector('.cell-3 img').src = ImgLoc;
             break;
         case "kanto":
             codeField.value = "";
-            document.querySelector('.cell-1 img').src = `./assets/images/sprites/pokemon-sprites/other/charmander.png`;
-            document.querySelector('.cell-2 img').src = `./assets/images/sprites/pokemon-sprites/other/bulbasaur.png`;
-            document.querySelector('.cell-3 img').src = `./assets/images/sprites/pokemon-sprites/other/squirtle.png`;
+            document.querySelector('.cell-1 img').src = `https://raw.githubusercontent.com/TheAmalLalgi/TheAmalLalgi.github.io/main/assets/images/sprites/pokemon-sprites/other/charmander.png`;
+            document.querySelector('.cell-2 img').src = `https://raw.githubusercontent.com/TheAmalLalgi/TheAmalLalgi.github.io/main/assets/images/sprites/pokemon-sprites/other/bulbasaur.png`;
+            document.querySelector('.cell-3 img').src = `https://raw.githubusercontent.com/TheAmalLalgi/TheAmalLalgi.github.io/main/assets/images/sprites/pokemon-sprites/other/squirtle.png`;
             break;
         // misc
         case "":
