@@ -1,3 +1,14 @@
+// files
 @import "./themes.scss";
 @import "./variables.scss";
 @import "./media.scss";
+
+// fonts
+@font-face {
+    font-family: 'Grtsk Mega';
+    src: local('Grtsk Mega'), url('../../../assets/fonts/grtsk-mega/GrtskMega-Bold.ttf');
+}
+@font-face {
+    font-family: 'Cartograph CF';
+    src: local('Cartograph CF'), url('../../../assets/fonts/cartograph-cf/CartographCF-DemiBold.otf');
+}
