@@ -1,6 +1,6 @@
 // variables
-$ff-p: 'Grtsk Mega';
-$ff-s: 'Cartograph CF';
+$ff-p: 'Grtsk Mega', sans-serif;
+$ff-s: 'Cartograph CF', monospace;
 
 $blk: #0f0f0f;
 $wht: #ffffdf;
@@ -16,3 +16,5 @@ $cyn: #26F9EB;
 html {
 	--nav-height: 5rem;
 }
+
+// the end 😁
