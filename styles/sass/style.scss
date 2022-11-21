@@ -57,6 +57,7 @@ hr.hr--dashed {
 	position: fixed;
 	top: 0;
 	left: 0;
+	max-height: 100vh;
 	width: 100%;
 	height: 100vh;
 	background-color: var(--bg);
@@ -76,17 +77,17 @@ hr.hr--dashed {
 	}
 
 	.text {
-		color: var(--gry-lt);
+		color: var(--fg-lt);
 		text-align: center;
 		font-size: 1rem;
 		max-width: 60vw;
 		&::after {
 			content: ' }';
-			color: var(--gry);
+			color: var(--fg-s);
 		}
 		&::before {
 			content: '{ ';
-			color: var(--gry);
+			color: var(--fg-s);
 		}
 	}
 
@@ -96,8 +97,8 @@ hr.hr--dashed {
 		font-weight: 800;
 		font-family: $ff-p;
 		opacity: 0.15;
-		color: var(--gry-lt);
-		border: 0.5rem dashed var(--gry);
+		color: var(--fg-lt);
+		border: 0.5rem dashed var(--fg-s);
 		padding: 1rem 1.5rem;
 		border-radius: 1rem;
 		position: absolute;
@@ -156,6 +157,7 @@ nav {
 		transition: transform 300ms ease-in;
 		width: 100%;
 		height: 100vh;
+		max-height: 100vh;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -175,8 +177,8 @@ nav {
 			font-weight: 800;
 			font-family: $ff-p;
 			opacity: 0.15;
-			color: var(--gry-lt);
-			border: 0.75rem dashed var(--gry);
+			color: var(--fg-lt);
+			border: 0.75rem dashed var(--fg-s);
 			border-radius: 1rem;
 			padding: 2rem 2rem 0 0;
 			position: absolute;
@@ -217,7 +219,7 @@ nav {
 			font-weight: 800;
 			font-family: $ff-p;
 			display: block;
-			color: var(--gry);
+			color: var(--fg-s);
 			text-decoration: none;
 			@include laptop() { font-size: 3rem }
 			&::before {
@@ -233,9 +235,9 @@ nav {
 				}
 			}
 			&:hover, &:focus-visible {
-				color: var(--gry-lt);
+				color: var(--fg-lt);
 				&::before {
-					color: var(--gry-lt);
+					color: var(--fg-lt);
 				}
 			}
 			&:focus {
@@ -355,7 +357,7 @@ main {
 				font-family: $ff-p;
 				text-decoration: none;
 				font-weight: 600;
-				color: var(--bg);
+				color: var(--blk);
 				font-size: 1rem;
 				padding: 0.75rem;
 				border-radius: 0.4rem;
@@ -398,7 +400,7 @@ main {
 			@include laptop() { font-size: 2rem }
 		}
 		h3 {
-			color: var(--gry);
+			color: var(--fg-s);
 			font-size: 1.25rem;
 			margin-bottom: 1rem;
 			@include laptop() { font-size: 2rem }
@@ -444,7 +446,7 @@ main {
 		font-family: $ff-p;
 		text-decoration: none;
 		font-weight: 600;
-		color: var(--bg);
+		color: var(--blk);
 		font-size: 0.75rem;
 		padding: 1rem;
 		border-radius: 0.4rem;
@@ -590,16 +592,16 @@ main {
 			outline: none;
 			font-family: $ff-s;
 			font-size: 1rem;
-			color: var(--grn);
+			color: var(--lck-clr);
 			padding: 0.5rem;
 			background-color: var(--bg);
 			border-radius: 0.4rem;
-			caret-color: var(--grn);
+			caret-color: var(--lck-clr);
 			@include tablet() { width: 68% }
 			@include laptop() { width: 50%; font-size: 1.15rem; }
 			&:focus {
-				border: 0.15rem solid var(--grn);
-				color: var(--grn);
+				border: 0.15rem solid var(--lck-clr);
+				color: var(--lck-clr);
 			}
 			&::placeholder {
 				color: var(--fg-lt);
@@ -610,7 +612,7 @@ main {
 			font-family: $ff-p;
 			text-decoration: none;
 			font-weight: 800;
-			color: var(--bg);
+			color: var(--blk);
 			font-size: 0.75rem;
 			padding: 0.75rem 1rem;
 			border-radius: 0.4rem;
@@ -695,7 +697,6 @@ main {
 				@include laptop() { font-size: 1.25rem }
 				&:focus {
 					border: 0.15rem solid var(--acc);
-					color: var(--acc);
 				}
 				&::placeholder {
 					color: var(--fg-lt);
@@ -718,7 +719,6 @@ main {
 				@include laptop() { font-size: 1.25rem }
 				&:focus {
 					border: 0.15rem solid var(--acc);
-					color: var(--acc);
 				}
 				&::placeholder {
 					color: var(--fg-lt);
@@ -730,7 +730,7 @@ main {
 				font-family: $ff-p;
 				text-decoration: none;
 				font-weight: 800;
-				color: var(--bg);
+				color: var(--blk);
 				font-size: 0.7rem;
 				padding: 0.75rem;
 				border-radius: 0.4rem;
@@ -784,11 +784,11 @@ footer {
 
 		&::before {
 			content: '[ ';
-			color: var(--gry);
+			color: var(--fg-s);
 		}
 		&::after {
 			content: ' ]';
-			color: var(--gry);
+			color: var(--fg-s);
 		}
 	}
 
@@ -832,12 +832,14 @@ footer {
 			}
 			&::before {
 				content: '{ ';
-				color: var(--gry);
+				color: var(--fg-s);
 			}
 			&::after {
 				content: ' }';
-				color: var(--gry);
+				color: var(--fg-s);
 			}
 		}
 	}
 }
+
+// the end 😁

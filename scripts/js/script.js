@@ -255,3 +255,33 @@ const preloader = document.querySelector('.preloader');
 window.addEventListener('load', () => {
     preloader.classList.add('preloader--done');
 })
+
+// theme switcher
+const switcher = document.querySelector('nav .logo');
+const acTheme = localStorage.getItem('theme')
+
+const lsThemeSet = (theme) => {
+    localStorage.setItem('theme', theme)
+}
+
+lsThemeSet('dark')
+
+if (acTheme == 'light') {
+    document.documentElement.setAttribute('data-theme', 'light')
+    lsThemeSet('light')
+} else if (acTheme == 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    lsThemeSet('dark')
+}
+
+switcher.onclick = () => {
+    if (document.documentElement.getAttribute('data-theme') != 'light') {
+        document.documentElement.setAttribute('data-theme', 'light')
+        lsThemeSet('light')
+    } else if (document.documentElement.getAttribute('data-theme') == 'light') {   
+        document.documentElement.setAttribute('data-theme', 'dark')
+        lsThemeSet('dark')
+    }
+}
+
+// the end 😁
