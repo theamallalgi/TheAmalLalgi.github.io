@@ -101,13 +101,18 @@ const codeField = document.querySelector('.game input.code');
 const luckBtn = document.querySelector('.game .luckBtn');
 const password = 'bazinga!';
 
+codeField.addEventListener('click', () => {
+    codeField.value = "";
+})
+
 luckBtn.addEventListener('click', () => {
     switch (codeField.value.toLowerCase()) {
         case password:
             codeField.value = "You're Lucky! 🥳";
             break;
-        case "rickroll":
+        case "rick":
             codeField.value = "Never gonna give you up! 🎶";
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
             break;
         case "password":
             codeField.value = "Yeah! what is it?";
@@ -188,9 +193,9 @@ luckBtn.addEventListener('click', () => {
             break;
         case "kanto":
             codeField.value = "";
-            document.querySelector('.cell-1 img').src = `./assets/images/sprites/pokemon-sprites/other/charmander.png`;
-            document.querySelector('.cell-2 img').src = `./assets/images/sprites/pokemon-sprites/other/bulbasaur.png`;
-            document.querySelector('.cell-3 img').src = `./assets/images/sprites/pokemon-sprites/other/squirtle.png`;
+            document.querySelector('.cell-1 img').src = `./assets/images/sprites/pokemon-sprites/Other/charmander.png`;
+            document.querySelector('.cell-2 img').src = `./assets/images/sprites/pokemon-sprites/Other/bulbasaur.png`;
+            document.querySelector('.cell-3 img').src = `./assets/images/sprites/pokemon-sprites/Other/squirtle.png`;
             break;
         // misc
         case "":
@@ -204,7 +209,8 @@ luckBtn.addEventListener('click', () => {
 
 // burger menu 
 const burger = document.querySelector('.burger');
-const navMenu = document.querySelector('.Nav__Links');
+const navBar = document.querySelector('nav');
+const navMenu = document.querySelector('nav ul.Nav__Links');
 const navMenuLinks = document.querySelectorAll('.Nav__Links li a');
 
 const menuActions = () => {
@@ -228,4 +234,24 @@ navMenuLinks.forEach((i) => {
             document.documentElement.style.overflowY = 'scroll';
         }
     })
+})
+
+// automatic navigation bar hide
+let lastScrollY = window.scrollY;
+
+window.addEventListener('scroll', () => {
+    if (lastScrollY < window.scrollY) {
+        navBar.classList.add('nav---hidden');
+    } else {
+        navBar.classList.remove('nav---hidden');
+    }
+
+    lastScrollY = window.scrollY;
+})
+
+// preloader 
+const preloader = document.querySelector('.preloader');
+
+window.addEventListener('load', () => {
+    preloader.classList.add('preloader--done');
 })

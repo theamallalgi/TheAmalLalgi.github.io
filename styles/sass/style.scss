@@ -32,6 +32,7 @@ body {
 	background-color: var(--bg);
 	color: var(--fg);
 	font-family: $ff-s;
+	padding-top: var(--nav-height);
 }
 
 .special__heading {
@@ -51,13 +52,91 @@ hr.hr--dashed {
 	@include laptop() { margin-block: 2rem 1rem }
 }
 
+// preloader
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: var(--bg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 2rem;
+	z-index: 999;
+	transition: transform 300ms ease-in;
+
+	img {
+		height: 15rem;
+		border-radius: 0.8rem;
+		@include tablet() { height: 20rem }
+		@include laptop() { height: 25rem }
+	}
+
+	.text {
+		color: var(--gry-lt);
+		text-align: center;
+		font-size: 1rem;
+		max-width: 60vw;
+		&::after {
+			content: ' }';
+			color: var(--gry);
+		}
+		&::before {
+			content: '{ ';
+			color: var(--gry);
+		}
+	}
+
+	&::before {
+		content: 'Approaching the site soon!';
+		font-size: 1rem;
+		font-weight: 800;
+		font-family: $ff-p;
+		opacity: 0.15;
+		color: var(--gry-lt);
+		border: 0.5rem dashed var(--gry);
+		padding: 1rem 1.5rem;
+		border-radius: 1rem;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		margin: 1rem;
+		writing-mode: horizontal-tb;
+		@include tablet() {
+			font-size: 1.25rem;
+			writing-mode: tb-rl;
+		}
+		@include laptop() {
+			font-size: 2.5rem;
+			max-width: 50vw;
+			writing-mode: tb-rl;
+			font-size: 2rem;
+			padding: 2rem 1.5rem;
+		}
+	}
+}
+
+.preloader.preloader--done {
+	transform: translateY(-100%);
+}
+
 // navigation
 nav {
-	padding: 2rem 1rem;
+	padding: 1rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	@include laptop() { padding: 2rem 1.5rem }
+	background-color: var(--nav-bg);
+	backdrop-filter: blur(1rem);
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transition: transform 200ms ease-in;
+	@include laptop() { padding: 1rem 1.5rem }
 
 	.logo {
 		padding: 0.5rem;
@@ -65,7 +144,7 @@ nav {
 		background-color: var(--bg-s);
 		cursor: pointer;
 		image-rendering: pixelated;
-		z-index: 999;
+		z-index: 888;
 		img {
 			width: 1.25rem;
 			@include laptop() { width: 1.5rem }
@@ -85,11 +164,53 @@ nav {
 		padding: 2rem 2.5rem;
 		display: flex;
 		justify-content: center;
-		align-items: flex-start;
+		align-items: flex-end;
 		flex-direction: column;
 		gap: 1rem;
 		overflow: hidden;
 		@include laptop() { gap: 1.5rem }
+		&::before {
+			content: 'Join the Anti Coffee Club';
+			font-size: 2rem;
+			font-weight: 800;
+			font-family: $ff-p;
+			opacity: 0.15;
+			color: var(--gry-lt);
+			border: 0.75rem dashed var(--gry);
+			border-radius: 1rem;
+			padding: 2rem 2rem 0 0;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			max-width: 80vw;
+			margin-left: -1rem;
+			margin-bottom: -1rem;
+			@include tablet() {
+				font-size: 3.5rem;
+				max-width: 60vw;
+				margin-left: -2rem;
+				margin-bottom: -2rem;
+			}
+			@include laptop() {
+				font-size: 5rem;
+				max-width: 50vw;
+				margin-left: -2rem;
+				margin-bottom: -2rem;
+			}
+		}
+		&::after {
+			content: '';
+			width: 2rem;
+			height: 2rem;
+			border-radius: 10px;
+			background-color: var(--acc);
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			margin: 2rem;
+			opacity: 0.3;
+			cursor: hand;
+		}
 
 		li a {
 			font-size: 1.25rem;
@@ -99,21 +220,21 @@ nav {
 			color: var(--gry);
 			text-decoration: none;
 			@include laptop() { font-size: 3rem }
-			&::after {
+			&::before {
 				content: '\f061';
-				margin-left: 1rem;
+				margin-right: 1rem;
 				font-family: "Font Awesome 6 Free";
 				font-weight: 800;
 				font-size: 1.5rem;
 				color: var(--bg);
 				@include laptop() {
-					margin-left: 1.5rem;
+					margin-right: 1.5rem;
 					font-size: 3rem;
 				}
 			}
 			&:hover, &:focus-visible {
 				color: var(--gry-lt);
-				&::after {
+				&::before {
 					color: var(--gry-lt);
 				}
 			}
@@ -139,7 +260,7 @@ nav {
 		font-weight: 800;
 		color: var(--fg-lt);
 		font-size: 0.75rem;
-		z-index: 999;
+		z-index: 888;
 		@include laptop() { font-size: 1rem }
 		.close {
 			display: none;
@@ -149,6 +270,10 @@ nav {
 		.menu { display: none }
 		.close { display: inline-block }
 	}
+}
+
+nav.nav---hidden {
+	transform: translateY(-100%);
 }
 
 // main
@@ -369,8 +494,8 @@ main {
 			}
 			@include laptop() {
 				padding: 2rem;
-				height: 350px;
-				width: 600px;
+				height: 300px;
+				width: 550px;
 			}
 
 			h3 {
