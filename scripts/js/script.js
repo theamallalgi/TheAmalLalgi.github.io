@@ -99,14 +99,31 @@ const randomPokemon = () => {
 // Luck code
 const codeField = document.querySelector('.game input.code');
 const luckBtn = document.querySelector('.game .luckBtn');
-const password = 'bazinga!';
+const password = 'bazinga';
 
 codeField.addEventListener('click', () => {
     codeField.value = "";
 })
 
+const preScript = (fire_starter, grass_starter, water_starter) => {
+    codeField.value = "";
+    const cells = document.querySelectorAll('.game .cont .cell');
+    const cellImg = document.querySelectorAll('.game .cont .cell img');
+    
+    cells.forEach((i) => {
+        i.style.padding = '0';
+    })
+    cellImg.forEach((i) => {
+        i.style.height = '100%';
+    })
+
+    document.querySelector('.cell-1 img').src = `./assets/images/sprites/pokemon-sprites/Other/${fire_starter}.png`;
+    document.querySelector('.cell-2 img').src = `./assets/images/sprites/pokemon-sprites/Other/${grass_starter}.png`;
+    document.querySelector('.cell-3 img').src = `./assets/images/sprites/pokemon-sprites/Other/${water_starter}.png`;
+}
+
 luckBtn.addEventListener('click', () => {
-    switch (codeField.value.toLowerCase()) {
+    switch (codeField.value.toLowerCase().replace('!', '')) {
         case password:
             codeField.value = "You're Lucky! 🥳";
             break;
@@ -186,17 +203,55 @@ luckBtn.addEventListener('click', () => {
             break;
         case "shinypokecodebreak":
             codeField.value = "";
-            let ImgLoc = `./assets/images/sprites/pokemon-sprites/Shiny/${newImage1}`;
-            document.querySelector('.cell-1 img').src = ImgLoc;
-            document.querySelector('.cell-2 img').src = ImgLoc;
-            document.querySelector('.cell-3 img').src = ImgLoc;
+            let ImgLoc1 = `./assets/images/sprites/pokemon-sprites/Shiny/${newImage1}`;
+            document.querySelector('.cell-1 img').src = ImgLoc1;
+            document.querySelector('.cell-2 img').src = ImgLoc1;
+            document.querySelector('.cell-3 img').src = ImgLoc1;
+            break;
+        case "pikajackpot":
+            codeField.value = "";
+            let ImgLoc2 = `./assets/images/sprites/pokemon-sprites/Other/pikachu-test.png`;
+            document.querySelector('.cell-1 img').src = ImgLoc2;
+            document.querySelector('.cell-2 img').src = ImgLoc2;
+            document.querySelector('.cell-3 img').src = ImgLoc2;
             break;
         case "kanto":
-            codeField.value = "";
-            document.querySelector('.cell-1 img').src = `./assets/images/sprites/pokemon-sprites/Other/charmander.png`;
-            document.querySelector('.cell-2 img').src = `./assets/images/sprites/pokemon-sprites/Other/bulbasaur.png`;
-            document.querySelector('.cell-3 img').src = `./assets/images/sprites/pokemon-sprites/Other/squirtle.png`;
+            preScript('charmander', 'bulbasaur', 'squirtle');
             break;
+        case "jhoto":
+            preScript('cyndaquill', 'chikorita', 'totodile');
+            break;
+        case "hoenn":
+            preScript('torchic', 'treeko', 'mudkip');
+            break;
+        case "sinnoh":
+            preScript('chimchar', 'turtwig', 'piplup');
+            break;
+        case "pikachu":
+            preScript('pichu', 'pikachu', 'raichu');
+            break;
+        case "legends:dogs":
+            preScript('entei', 'suicune', 'raikou');
+            break;
+        case "legends:gods":
+            preScript('dialga', 'palkia', 'giratina');
+            break;
+        case "legends:primal":
+            preScript('groudon', 'rayquaza', 'kyogre');
+            break;
+        case "legends:classic":
+            preScript('hooh', 'lugia', 'mewtwo');
+            break;
+        case "legends:birds":
+            preScript('articuno', 'zapdos', 'moltres');
+            break;
+        case "legends:robots":
+            preScript('regice', 'registeel', 'regirock');
+            break;
+        case "legends:cute":
+            preScript('celebie', 'mew', 'jirachi');
+            break;
+
         // misc
         case "":
             codeField.value = "enter something! 😑";
@@ -283,5 +338,23 @@ switcher.onclick = () => {
         lsThemeSet('dark')
     }
 }
+
+// modal (game)
+const modalCloseBtn = document.querySelector('.gme__modal .model__cont button#close')
+const gameModal = document.querySelector('.gme__modal')
+
+const gameModalToggle = () => {
+    gameModal.classList.toggle('gme__modal--open')
+    if (gameModal.classList[1] == 'gme__modal--open') {
+        document.documentElement.style.overflowY = 'hidden';
+    }
+    if (gameModal.classList[1] != 'gme__modal--open') {
+        document.documentElement.style.overflowY = 'scroll';
+    }
+}
+
+modalCloseBtn.addEventListener('click', () => {
+    gameModalToggle()
+})
 
 // the end 😁

@@ -29,6 +29,14 @@
 			<div class="close">CLOSE</div>
 		</div>
 	</nav>
+	<!-- Modal (Game) -->
+	<div class="gme__modal">
+		<div class="model__cont">
+			<h2>How to Play the Game?</h2>
+			<p>The game is really simple, there are three cells with different Pokemon in it each, the goal is to get the same Pokemon in each cell, i.e if you somehow get Pikachu in all the three cells, Jackpot! but there's a catch to it, the odds of you gettin' the same pokemon are very less! so trust me, if you do get the Jackpot, your'e one of the most luckiet people on earth! Wait, there's more, even more luckier people might encounter shiny pokemon (the likes of that happening are really less!), PS: as an example for a jackpot, try typing in the secret code: <span class="special__code">PikaJackpot</span></p>
+			<button id="close">close</button>
+		</div>
+	</div>
 	<!-- Main -->
 	<main>
 		<h1><span class="greeting">Gud Mornin'!</span> hello there! I am <span class="special" id="colorChange">Amal Lalgi</span></h1>
@@ -128,7 +136,7 @@
 	</div>
 	<!-- game -->
 	<div class="game" id="game">
-		<h2 class="special__heading">let's play a game</h2>
+		<h2 class="special__heading">let's play a <span class="game__modal__switch" onclick="gameModalToggle()">game</span></h2>
 		<hr class="hr--dashed">
 		<div class="cont">
 			<div class="cell cell-1" onclick="randomPokemon()">
@@ -199,7 +207,6 @@
 				<li><a href="#contact-loc">Contact me</a></li>
 				<li><a href="#game">Mini game</a></li>
 				<li><a href="#skills-loc">My skills</a></li>
-				<li><a href="pages/FAQ/faq.html">FAQ</a></li>
 			</ul>
 		</div>
 	</footer>

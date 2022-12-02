@@ -13,7 +13,7 @@
 
 ::selection {
 	background-color: var(--acc);
-	color: var(--bg);
+	color: var(--blk);
 }
 
 :focus {
@@ -524,6 +524,83 @@ main {
 	}
 }
 
+// game model
+.gme__modal {
+	transform: translateY(200%);
+	transition: transform 300ms ease-in;
+	position: fixed;
+	z-index: 777;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 1rem;
+	background-color: var(--bg);
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	place-content: center;
+
+	.model__cont {
+		max-width: 90vw;
+		margin-inline: auto;
+		border-radius: 0.8rem;
+		padding: 1rem 1.5rem;
+		background-color: var(--bg);
+		border: 0.5rem dashed var(--bg-s);
+		@include tablet() { max-width: 80vw }
+		@include laptop() { max-width: 60vw }
+
+		h2 {
+			font-size: 1rem;
+			font-family: $ff-p;
+			margin-bottom: 1rem;
+			color: var(--fg-s);
+			@include tablet() {
+				font-size: 1.5rem;
+				margin-bottom: 1.5rem;
+			}
+			@include laptop() {
+				font-size: 2rem;
+				margin-bottom: 2rem;
+			}
+		}
+
+		p {
+			font-size: 0.90rem;
+			font-family: $ff-s;
+			margin-bottom: 1rem;
+			color: var(--fg-lt);
+			@include tablet() { font-size: 1.2rem }
+			@include laptop() { font-size: 1.25rem }
+
+			span.special__code {
+				font-style: italic;
+				color: var(--fg-s);
+			}
+		}
+
+		button#close {
+			display: inline-block;
+			font-family: $ff-p;
+			text-decoration: none;
+			font-weight: 800;
+			color: var(--blk);
+			font-size: 0.75rem;
+			padding: 0.75rem 1rem;
+			border-radius: 0.4rem;
+			outline: none;
+			cursor: pointer;
+			background-color: var(--red);
+			border: 0.1rem solid var(--red);
+			&:hover { background-color: var(--red-drk) }
+		}
+	}
+
+	&.gme__modal--open {
+		transform: translateY(0%);
+	}
+}
+
 // game
 .game {
 	padding: 2rem;
@@ -535,6 +612,10 @@ main {
 	h2 {
 		font-size: 1.25rem;
 		text-align: center;
+		span {
+			text-decoration: underline var(--fg-s);
+			cursor: pointer;
+		}
 		@include laptop() { font-size: 2rem }
 	}
 
@@ -565,6 +646,7 @@ main {
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			overflow: hidden;
 			cursor: pointer;
 			@include tablet() { height: 9rem }
 			@include laptop() { height: 12rem }
