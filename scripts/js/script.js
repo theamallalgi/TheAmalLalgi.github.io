@@ -1,3 +1,4 @@
+console.log('Test Start!')
 // greeting
 const greetingText = document.querySelector('main h1 span.greeting');
 let today = new Date();
@@ -48,8 +49,11 @@ colorChanger.forEach((i) => {
 const randomPokemon = () => {
     // import all images into a list
     let PokemonImages = [];
+    let totalNoOfPokemon = 650;
+    let shinyLoc = './assets/images/sprites/pokemon-sprites/Shiny/'
+    let normalLoc = './assets/images/sprites/pokemon-sprites/Base/'
 
-    for (let i = 1; i < 650; i++) {
+    for (let i = 1; i < totalNoOfPokemon ; i++) {
         let images = `Pokemon-(${i}).png`;
         PokemonImages.push(images);
     };
@@ -71,9 +75,9 @@ const randomPokemon = () => {
             newImage3 = PokemonImages[randomIndex3];
             newImage4 = PokemonImages[randomIndex4];
 
-            document.querySelector('.cell-1 img').src = `./assets/images/sprites/pokemon-sprites/Shiny/${newImage1}`;
-            document.querySelector('.cell-2 img').src = `./assets/images/sprites/pokemon-sprites/Shiny/${newImage2}`;
-            document.querySelector('.cell-3 img').src = `./assets/images/sprites/pokemon-sprites/Shiny/${newImage3}`;
+            document.querySelector('.cell-1 img').src = `${shinyloc}${newImage1}`;
+            document.querySelector('.cell-2 img').src = `${shinyloc}${newImage2}`;
+            document.querySelector('.cell-3 img').src = `${shinyloc}${newImage3}`;
         }; shinyRandomSlots();
     } else {
         // Normal Encounters
@@ -88,9 +92,9 @@ const randomPokemon = () => {
             newImage3 = PokemonImages[randomIndex3];
             newImage4 = PokemonImages[randomIndex4];
 
-            document.querySelector('.cell-1 img').src = `./assets/images/sprites/pokemon-sprites/Base/${newImage1}`;
-            document.querySelector('.cell-2 img').src = `./assets/images/sprites/pokemon-sprites/Base/${newImage2}`;
-            document.querySelector('.cell-3 img').src = `./assets/images/sprites/pokemon-sprites/Base/${newImage3}`;
+            document.querySelector('.cell-1 img').src = `${normalLoc}${newImage1}`;
+            document.querySelector('.cell-2 img').src = `${normalLoc}${newImage2}`;
+            document.querySelector('.cell-3 img').src = `${normalLoc}${newImage3}`;
         }; randomSlots();
     }
 }; randomPokemon();
@@ -259,6 +263,11 @@ luckBtn.addEventListener('click', () => {
         default:
             codeField.value = "Not that Lucky! 😝";
             break;
+        case "retroboi":
+            codeField.value = "This is a Beta Function!";
+            retromode();
+            window.location.reload();
+            break;
     }
 })
 
@@ -311,34 +320,6 @@ window.addEventListener('load', () => {
     preloader.classList.add('preloader--done');
 })
 
-// theme switcher
-const switcher = document.querySelector('nav .logo');
-const acTheme = localStorage.getItem('theme')
-
-const lsThemeSet = (theme) => {
-    localStorage.setItem('theme', theme)
-}
-
-lsThemeSet('dark')
-
-if (acTheme == 'light') {
-    document.documentElement.setAttribute('data-theme', 'light')
-    lsThemeSet('light')
-} else if (acTheme == 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark')
-    lsThemeSet('dark')
-}
-
-switcher.onclick = () => {
-    if (document.documentElement.getAttribute('data-theme') != 'light') {
-        document.documentElement.setAttribute('data-theme', 'light')
-        lsThemeSet('light')
-    } else if (document.documentElement.getAttribute('data-theme') == 'light') {   
-        document.documentElement.setAttribute('data-theme', 'dark')
-        lsThemeSet('dark')
-    }
-}
-
 // modal (game)
 const modalCloseBtn = document.querySelector('.gme__modal .model__cont button#close')
 const gameModal = document.querySelector('.gme__modal')
@@ -356,5 +337,105 @@ const gameModalToggle = () => {
 modalCloseBtn.addEventListener('click', () => {
     gameModalToggle()
 })
+
+// Retro Mode
+// Other Tweaks
+const pokeClick = () => {
+    if (acTheme == 'retro') { retroRandomPokemon() }
+    else { randomPokemon() }
+}
+
+const retroRandomPokemon = () => {
+    let PokemonImages = [];
+    totalNoOfPokemon = 151;
+    shinyLoc = './assets/images/sprites/pokemon-sprites/Retro/';
+    normalLoc = './assets/images/sprites/pokemon-sprites/Retro/';
+    const globalRandomIndex = Math.floor(Math.random() * PokemonImages.length);
+
+    for (let i = 1; i < totalNoOfPokemon ; i++) {
+        let images = `Pokemon-(${i}).png`;
+        PokemonImages.push(images);
+    };
+
+    document.querySelectorAll('.cell').forEach( (i) => {
+        i.style.backgroundImage = 'none';
+        i.style.backgroundColor = 'White';
+    })
+
+    // Normal Encounters
+    const randomSlots = () => {
+        randomIndex1 = Math.floor(Math.random() * PokemonImages.length);
+        randomIndex2 = Math.floor(Math.random() * PokemonImages.length);
+        randomIndex3 = Math.floor(Math.random() * PokemonImages.length);
+        randomIndex4 = Math.floor(Math.random() * PokemonImages.length);
+
+        newImage1 = PokemonImages[randomIndex1];
+        newImage2 = PokemonImages[randomIndex2];
+        newImage3 = PokemonImages[randomIndex3];
+        newImage4 = PokemonImages[randomIndex4];
+
+        document.querySelector('.cell-1 img').src = `${normalLoc}${newImage1}`;
+        document.querySelector('.cell-2 img').src = `${normalLoc}${newImage2}`;
+        document.querySelector('.cell-3 img').src = `${normalLoc}${newImage3}`;
+    }; randomSlots();
+};
+
+const retromode = () => {
+    localStorage.setItem('theme', 'retro')
+    retroRandomPokemon();
+    document.documentElement.style.setProperty('--acc', `#5b5b5b`);
+    document.querySelector('.retrofilter').style.display = 'block';
+
+    const realBtns = document.querySelectorAll('#realBtn');
+    realBtns.forEach((i) => {
+        i.style.backgroundColor = 'var(--clr-5)';
+        i.style.borderColor = 'var(--clr-5)';
+    })
+
+    const realInputs = document.querySelectorAll('input[type="text"], textarea#msg');
+    realInputs.forEach((i) => {
+        i.style.color = 'var(--clr-5)';
+        i.style.borderColor = 'var(--clr-2)';
+        i.style.caretColor = 'var(--clr-5)';
+    })
+    
+};
+
+
+// theme switcher
+const switcher = document.querySelector('nav .logo');
+const acTheme = localStorage.getItem('theme');
+
+const lsThemeSet = (theme) => {
+    localStorage.setItem('theme', theme)
+}
+
+lsThemeSet('light')
+
+if (acTheme == 'light') {
+    document.documentElement.setAttribute('data-theme', 'light')
+    lsThemeSet('light')
+} else if (acTheme == 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    lsThemeSet('dark')
+} else if (acTheme == 'retro') {
+    document.documentElement.setAttribute('data-theme', 'retro')
+    lsThemeSet('retro');
+    retromode();
+}
+
+switcher.onclick = () => {
+    if (document.documentElement.getAttribute('data-theme') == 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light')
+        lsThemeSet('light')
+    } else if (document.documentElement.getAttribute('data-theme') == 'light') {   
+        document.documentElement.setAttribute('data-theme', 'dark')
+        lsThemeSet('dark')
+    } else if (document.documentElement.getAttribute('data-theme') == 'retro') {   
+        document.documentElement.setAttribute('data-theme', 'dark')
+        lsThemeSet('dark')
+    }
+    window.location.reload()
+}
 
 // the end 😁

@@ -1,7 +1,1 @@
-{
-"version": 3,
-"mappings": "AAeA,IAAK,CACJ,YAAY,CAAC,KAAK",
-"sources": ["../../sass/modules/variables.scss"],
-"names": [],
-"file": "variables.css"
-}
+{"version":3,"sourceRoot":"","sources":["../../sass/modules/variables.scss"],"names":[],"mappings":"AAeA,KACC","file":"variables.css"}

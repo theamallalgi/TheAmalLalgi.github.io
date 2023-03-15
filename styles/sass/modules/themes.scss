@@ -62,4 +62,23 @@
 	--nav-bg: #edb49170;
 }
 
+:root[data-theme = 'retro'] {
+	--clr-1: #aaaaaa;
+	--clr-2: #666666;
+	--clr-3: #080808;
+	--clr-4: #000000;
+	--clr-5: #FFFFFF;
+
+	--bg: var(--clr-2);
+	--bg-s: var(--clr-1);
+	--fg: var(--clr-4);
+	--fg-s: var(--clr-3);
+	--fg-lt: #1a1a1a;
+	--acc: var(--clr-5);
+	--link: #1a7eac;
+	--lck-clr: #11472c;
+	--snd: #cacaca;
+	--nav-bg: #66666670;
+}
+
 // the end 😁

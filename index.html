@@ -10,6 +10,10 @@
 	<script src="scripts/js/script.js" defer></script>
 </head>
 <body id="home-loc">
+	<!-- filters -->
+	<div class="retrofilter">
+		<img src="assets/images/filters/grain-(2).png">
+	</div>
 	<!-- Preloader -->
 	<div class="preloader">
 		<div class="img"><img src="assets/images/preloader/mario-racing.gif" alt="mario is racing"></div>
@@ -51,7 +55,7 @@
 				<h2>Narutomaki</h2>
 				<hr class="hr--dashed">
 				<p>Order the best ramen right away! You've got plenty dishes to choose from. Experience taste like never before. We deliver as fast as a lightning bolt! Just warm up the broth, noodles and toppings and in less than 10 minutes you'll have the best ramen near you.</p>
-				<a href="https://frozenembers.netlify.app" target="blank">VISIT ↗</a>
+				<a id='realBtn' href="https://frozenembers.netlify.app" target="blank">VISIT ↗</a>
 			</div>
 		</div>
 	</div>
@@ -70,7 +74,7 @@
 		<h2 class="special__heading">works</h2>
 		<hr class="hr--dashed">
 		<p>see all of my Dev 'nd Design works one click away!  most of the works (open-source ones) are uploaded on  GitHub. My art works are published on my Pinterest and  DeviantArt handles.</p>
-		<a href="pages/works/index.html">SEE MY WORKS ↗</a>
+		<a id='realBtn' href="pages/works/index.html">SEE MY WORKS ↗</a>
 	</div>
 	<!-- skills -->
 	<div class="skills" id="skills-loc">
@@ -139,20 +143,20 @@
 		<h2 class="special__heading">let's play a <span class="game__modal__switch" onclick="gameModalToggle()">game</span></h2>
 		<hr class="hr--dashed">
 		<div class="cont">
-			<div class="cell cell-1" onclick="randomPokemon()">
+			<div class="cell cell-1" onclick="pokeClick()">
 				<img src="assets/images/sprites/pokemon-sprites/Base/Pokemon-(106).png" alt="">
 			</div>
-			<div class="cell cell-2" onclick="randomPokemon()">
+			<div class="cell cell-2" onclick="pokeClick()">
 				<img src="assets/images/sprites/pokemon-sprites/Base/Pokemon-(287).png" alt="">
 			</div>
-			<div class="cell cell-3" onclick="randomPokemon()">
+			<div class="cell cell-3" onclick="pokeClick()">
 				<img src="assets/images/sprites/pokemon-sprites/Base/Pokemon-(478).png" alt="">
 			</div>
 		</div>
 		<hr class="hr--dashed">
 		<div class="luck">
 			<input type="text" class="code" placeholder="{ the secret word! }">
-			<button class="luckBtn">Feeling Lucky?</button>
+			<button id="realBtn" class="luckBtn">Feeling Lucky?</button>
 		</div>
 	</div>
 	<!-- contact -->
@@ -171,14 +175,18 @@
 				<a target="blank" href="mailto:theamallalgi@gmail.com">Email ↗</a>
 			</div>
 			<div class="box form">
-				<form action="email">
-					<input type="text" placeholder="{ enter your name * }" required>
-					<input type="text" placeholder="{ enter your email id * }" required>
+				<form action="https://formsubmit.co/your@email.com" method="POST">
+					<input type="text" placeholder="{ enter your name * }" name='name' required>
+					<input type="text" placeholder="{ enter your email id * }" name='email' required>
 					<input type="text" placeholder="{ enter the subject }">
+					<input type="hidden" name="_next" value="theamallalgi.pages.dev/pages/mail/main.html">
+					<input type="hidden" name="_template" value="table">
+					<input type="hidden" name="_subject" value="New Mail From Website 🐦">
+					<input type="hidden" name="_autoresponse" value="Thank you for Contacting Me. I will make sure that I'll look into what you have to say when I'm free!">
 					<textarea name="message" id="msg" cols="30" rows="10" placeholder="{ type something! * }" required></textarea>
 					<div class="btns">
-						<button onclick="document.querySelector('form').reset()">CANCEL</button>
-						<input type="submit" value="SEND">
+						<button id="realBtn" onclick="document.querySelector('form').reset()">CANCEL</button>
+						<input id="realBtn" type="submit" value="SEND">
 					</div>
 				</form>
 			</div>
