@@ -1,4 +1,13 @@
-console.log('Test Start!')
+// Global Variables
+let retroModeToggle = false;
+let shinyCountElem = document.querySelector('nav .points .shinies');
+let trophyCountElem = document.querySelector('nav .points .trophies');
+let shinyCodeVal = localStorage.getItem('locShinyCount');
+let trophyCodeVal = localStorage.getItem('locTrophyCount');
+
+if (!shinyCodeVal) { shinyCodeVal = 0 }
+if (!trophyCodeVal) { trophyCodeVal = 0 }
+
 // greeting
 const greetingText = document.querySelector('main h1 span.greeting');
 let today = new Date();
@@ -62,8 +71,13 @@ const randomPokemon = () => {
     const globalRandomIndex = Math.floor(Math.random() * PokemonImages.length);
     const shinyRandomIndex = Math.floor(Math.random() * 141441);
 
+
     // Shiny Encounters
     if (shinyRandomIndex == 1) {
+        shinyCodeVal = +shinyCodeVal + 3;
+        localStorage.setItem('locShinyCount', shinyCodeVal);
+        shinyCountElem.innerText = shinyCodeVal; // To set the values on the points bar
+
         const shinyRandomSlots = () => {
             randomIndex1 = Math.floor(Math.random() * PokemonImages.length);
             randomIndex2 = Math.floor(Math.random() * PokemonImages.length);
@@ -99,11 +113,11 @@ const randomPokemon = () => {
     }
 }; randomPokemon();
 
-
 // Luck code
 const codeField = document.querySelector('.game input.code');
 const luckBtn = document.querySelector('.game .luckBtn');
-const password = 'bazinga';
+const password = 'joemama';
+const retroCode = "retroboi"
 
 codeField.addEventListener('click', () => {
     codeField.value = "";
@@ -130,6 +144,12 @@ luckBtn.addEventListener('click', () => {
     switch (codeField.value.toLowerCase().replace('!', '')) {
         case password:
             codeField.value = "You're Lucky! 🥳";
+            const logo = document.querySelector('nav .logo img');
+            logo.src = './assets/images/sprites/other/trophy.png';
+
+            trophyCodeVal = +trophyCodeVal + 1;
+            localStorage.setItem('locTrophyCount', trophyCodeVal);
+            trophyCountElem.innerText = trophyCodeVal; // To set the values on the points bar
             break;
         case "rick":
             codeField.value = "Never gonna give you up! 🎶";
@@ -263,10 +283,9 @@ luckBtn.addEventListener('click', () => {
         default:
             codeField.value = "Not that Lucky! 😝";
             break;
-        case "retroboi":
-            codeField.value = "This is a Beta Function!";
+        case retroCode:
+            codeField.value = "Let's Time Travel!";
             retromode();
-            window.location.reload();
             break;
     }
 })
@@ -339,11 +358,23 @@ modalCloseBtn.addEventListener('click', () => {
 })
 
 // Retro Mode
-// Other Tweaks
-const pokeClick = () => {
-    if (acTheme == 'retro') { retroRandomPokemon() }
-    else { randomPokemon() }
-}
+const retromode = () => {
+    retroModeToggle = true;
+    const filterElem = document.querySelector('.retrofilter img');
+
+    retroRandomPokemon();
+
+    document.documentElement.style.filter = 'grayscale(100%)'; // makes everything b/w
+
+    document.documentElement.style.setProperty('--acc', `#5b5b5b`);
+    document.querySelector('.retrofilter').style.display = 'block';
+    const realInputs = document.querySelectorAll('input[type="text"], textarea#msg');
+    realInputs.forEach((i) => {
+        i.style.color = 'var(--clr-5)';
+        i.style.caretColor = 'var(--clr-5)';
+    })
+    
+};
 
 const retroRandomPokemon = () => {
     let PokemonImages = [];
@@ -380,27 +411,10 @@ const retroRandomPokemon = () => {
     }; randomSlots();
 };
 
-const retromode = () => {
-    localStorage.setItem('theme', 'retro')
-    retroRandomPokemon();
-    document.documentElement.style.setProperty('--acc', `#5b5b5b`);
-    document.querySelector('.retrofilter').style.display = 'block';
-
-    const realBtns = document.querySelectorAll('#realBtn');
-    realBtns.forEach((i) => {
-        i.style.backgroundColor = 'var(--clr-5)';
-        i.style.borderColor = 'var(--clr-5)';
-    })
-
-    const realInputs = document.querySelectorAll('input[type="text"], textarea#msg');
-    realInputs.forEach((i) => {
-        i.style.color = 'var(--clr-5)';
-        i.style.borderColor = 'var(--clr-2)';
-        i.style.caretColor = 'var(--clr-5)';
-    })
-    
-};
-
+const pokeClick = () => {
+    if (retroModeToggle == true) { retroRandomPokemon() }
+    else { randomPokemon() }
+}
 
 // theme switcher
 const switcher = document.querySelector('nav .logo');
@@ -418,24 +432,17 @@ if (acTheme == 'light') {
 } else if (acTheme == 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark')
     lsThemeSet('dark')
-} else if (acTheme == 'retro') {
-    document.documentElement.setAttribute('data-theme', 'retro')
-    lsThemeSet('retro');
-    retromode();
 }
 
 switcher.onclick = () => {
-    if (document.documentElement.getAttribute('data-theme') == 'dark') {
+    if (document.documentElement.getAttribute('data-theme') != 'light') {
         document.documentElement.setAttribute('data-theme', 'light')
         lsThemeSet('light')
     } else if (document.documentElement.getAttribute('data-theme') == 'light') {   
         document.documentElement.setAttribute('data-theme', 'dark')
         lsThemeSet('dark')
-    } else if (document.documentElement.getAttribute('data-theme') == 'retro') {   
-        document.documentElement.setAttribute('data-theme', 'dark')
-        lsThemeSet('dark')
     }
-    window.location.reload()
 }
 
 // the end 😁
+

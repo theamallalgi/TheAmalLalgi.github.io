@@ -189,11 +189,11 @@ nav {
 		overflow: hidden;
 		@include laptop() { gap: 1.5rem }
 		&::before {
-			content: 'Join the Anti Coffee Club';
+			content: 'Join the Anti-Coffee Club';
 			font-size: 2rem;
 			font-weight: 800;
 			font-family: $ff-p;
-			opacity: 0.15;
+			opacity: 0.05;
 			color: var(--fg-lt);
 			border: 0.75rem dashed var(--fg-s);
 			border-radius: 1rem;
@@ -262,6 +262,22 @@ nav {
 				outline: none;
 				border-radius: unset;
 				padding: unset;
+			}
+		}
+
+		.points {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			margin: 2rem;
+			background-color: var(--nav-bg);
+			padding: 0.5rem 1rem;
+			border-radius: 0.4rem;
+			color: var(--fg-s);
+			pointer-events: none;
+
+			span {
+				color: var(--fg-lt);
 			}
 		}
 	}
