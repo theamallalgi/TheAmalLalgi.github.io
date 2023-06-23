@@ -218,6 +218,11 @@ luckBtn.addEventListener('click', () => {
             document.documentElement.style.setProperty('--acc', `#26F9EB`);
             break;
         // cheats
+        case "unsheathe":
+            codeField.value = "Well, who told you that?!";
+            let blurField = document.querySelector('.about');
+            blurField.style.filter = 'blur(0)';
+            break;
         case "pokecodebreak":
             codeField.value = "";
             let imgLoc = `./assets/images/sprites/pokemon-sprites/Base/${newImage4}`;
