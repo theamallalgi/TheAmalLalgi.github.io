@@ -416,6 +416,7 @@ main {
 	gap: 2rem;
 	padding-top: 5rem;
 	flex-wrap: wrap;
+	filter: blur(0.45rem);
 	@include tablet() { flex-wrap: nowrap }
 
 	h2 {
@@ -426,6 +427,7 @@ main {
 		color: var(--fg-lt);
 		max-width: 90vw;
 		margin-right: auto;
+		// filter: blur(0.45rem);
 		@include laptop() { max-width: 60vw }
 		h2 {
 			font-family: $ff-p;
@@ -449,6 +451,7 @@ main {
 	img {
 		height: 400px;
 		border-radius: 0.4rem;
+		// filter: blur(0.45rem);
 		@include laptop() { height: 500px }
 	}
 }
