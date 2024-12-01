@@ -1,228 +1,251 @@
 <!DOCTYPE html>
-<html lang="en" data-theme = 'dark'>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Amal Lalgi</title>
-	<link rel="icon" href="assets/images/favicon/logo-ml.png"/>
-	<link rel="stylesheet" href="styles/css/style.css">
-	<link rel="stylesheet" href="assets/fontawesome/css/all.min.css"/>
-	<script src="scripts/js/script.js" defer></script>
+	<title>Amal Lalgi - Dev, Design & Fun</title>
+	<link rel="icon" href="assets/images/icons/logo-ml.png">
+	<link rel="stylesheet" href="styles/css/styles.css">
+	<script src="scripts/gsap/gsap.min.js" defer></script>
+	<script src="scripts/gsap/scrolltrigger.min.js" defer></script>
+	<script src="scripts/scripts.js" defer></script>
 </head>
-<body id="home-loc">
-	<!-- filters -->
-	<div class="retrofilter">
-		<img src="assets/images/filters/grain-(2).png">
-	</div>
-	<!-- Preloader -->
-	<div class="preloader">
-		<div class="img"><img src="assets/images/preloader/mario-racing.gif" alt="mario is racing"></div>
-		<div class="text">we'll reach the destination in a moment!</div>
-	</div>
+<body data-theme="dark" data-state='loading'>
+	<!-- Misc -->
+	<div id="home"></div>
 	<!-- Navigation -->
-	<nav>
-		<div class="logo"><img src="assets/images/favicon/favicon.png" alt="logo"></div>
-		<ul class="Nav__Links">
-			<li><a href="#home-loc" class="home-loc">Home</a></li>
-			<li><a href="#about-loc" class="about-loc">About Me</a></li>
-			<li><a href="pages/works/index.html" target="blank" class="works-loc">My Works</a></li>
-			<li><a href="#contact-loc" class="contact-loc">Contact Me</a></li>
-			<div class="points">
-				🏆: <span class="trophies">0</span>
-				✨: <span class="shinies">0</span>
-			</div>
-		</ul>
-		<div class="burger">
-			<div class="menu">MENU</div>
-			<div class="close">CLOSE</div>
+	<nav class="nav_bar">
+		<div class="nav_cont">
+			<a href="index.html" class="nav_btn"><img class="nav_logo glyph" data-img='icon-s' src="assets/images/dependencies/red/icon-s.png" alt="logo"></a>
+			<div class="menu link menu_btn nav_btn"><img class="nav_ham_menu glyph" data-img='menu2' src="assets/images/dependencies/red/menu2.png" alt="menu"></div>
 		</div>
 	</nav>
-	<!-- Modal (Game) -->
-	<div class="gme__modal">
-		<div class="model__cont">
-			<h2>How to Play the Game?</h2>
-			<p>The game is really simple, there are three cells with different Pokemon in it each, the goal is to get the same Pokemon in each cell, i.e if you somehow get Pikachu in all the three cells, Jackpot! but there's a catch to it, the odds of you gettin' the same pokemon are very less! so trust me, if you do get the Jackpot, your'e one of the most luckiet people on earth! Wait, there's more, even more luckier people might encounter shiny pokemon (the likes of that happening are really less!), PS: as an example for a jackpot, try typing in the secret code: <span class="special__code">PikaJackpot</span></p>
-			<button id="close">close</button>
+	<div class="nav_menu">
+		<div class="tools">
+			<div class="tool_link theme"><img class="glyph" data-img='moon2' src="assets/images/dependencies/red/moon2.png" alt=""></div>
+			<div class="tool_link aud-click-one egg"><img class="glyph" data-img='egg1' src="assets/images/dependencies/red/egg1.png" alt=""></div>
+			<div class="tool_link aud-click-one coin"><img class="glyph" data-img='coin' src="assets/images/dependencies/red/coin.png" alt=""></div>
+			<div class="tool_link aud-click-seven mute"><img class="glyph" data-img='music-1' src="assets/images/dependencies/red/music-1.png" alt=""></div>
+			<div class="tool_link aud-click-one question"><img class="glyph" data-img='question' src="assets/images/dependencies/red/question.png" alt=""></div>
 		</div>
+		<ul class="nav_links">
+			<li><a href="#home" class="home fun-link" data-animatedtxt="Home">Home</a></li>
+			<li><a href="#about" class="about fun-link" data-animatedtxt="About">About</a></li>
+			<li><a href="pages/" class="works fun-link" data-animatedtxt="Works">Works</a></li>
+			<li><a href="#contact" class="contact fun-link" data-animatedtxt="Contact">Contact</a></li>
+		</ul>
 	</div>
-	<!-- Main -->
-	<main>
-		<h1><span class="greeting">Gud Mornin'!</span> hello there! I am <span class="special" id="colorChange">Amal Lalgi</span></h1>
-		<h3>Full Stack Dev / UI/UX Design / Shell Scripting</h3>
-	</main>
-	<!-- pinned -->
-	<div class="pinned">
-		<h2 class="special__heading">pinned works</h2>
-		<div class="pinned__cont">
-			<img src="assets/images/cards/narutomaki-card.jpg" alt="online ramen shop">
-			<div class="desc">
-				<h2>Narutomaki</h2>
-				<hr class="hr--dashed">
-				<p>Order the best ramen right away! You've got plenty dishes to choose from. Experience taste like never before. We deliver as fast as a lightning bolt! Just warm up the broth, noodles and toppings and in less than 10 minutes you'll have the best ramen near you.</p>
-				<a id='realBtn' href="https://frozenembers.netlify.app" target="blank">VISIT ↗</a>
-			</div>
-		</div>
-	</div>
-	<!-- About -->
-	<div class="about" id="about-loc">
-		<div class="desc">
-			<h2 class="special__heading">about me</h2>
-			<hr class="hr--dashed">
-			<h3>digital crafzman</h3>
-			<p>Hello again! As I said, my name is Amal. I am a passionate full stack web developer (MERN Stack) and UI/UX Designer from Kerala, India. I love to design and code websites and web apps. I am also into Shell scripting and Machine Learning. And when I am not coding, I drink tea (I hate coffee!) and doze off in front of the TV watchin' Sitcoms and Anime! I'm currently on a quest to master full stack dev.</p>
-		</div>
-		<img src="assets/images/main/hero-(2).jpg" alt="Amal Lalgi">
-	</div>
-	<!-- Works -->
-	<div class="works" id="works-loc">
-		<h2 class="special__heading">works</h2>
-		<hr class="hr--dashed">
-		<p>see all of my Dev 'nd Design works one click away!  most of the works (open-source ones) are uploaded on  GitHub. My art works are published on my Pinterest and  DeviantArt handles.</p>
-		<a id='realBtn' href="pages/works/index.html">SEE MY WORKS ↗</a>
-	</div>
-	<!-- skills -->
-	<div class="skills" id="skills-loc">
-		<h2 class="special__heading">my skill sets</h2>
-		<!-- <hr class="hr--dashed"> -->
-		<div class="cont">
-			<div class="skillset skillset-1">
-				<h3>FrontEnd Dev & Design</h3>
-				<ul>
-					<li>HTML, Markdown</li>
-					<li>CSS, Sass(SCSS)</li>
-					<li>React.js</li>
-					<li>Tailwind css</li>
-				</ul>
-			</div>
-			<div class="skillset skillset-2">
-				<h3>BackEnd Dev</h3>
-				<ul>
-					<li>JavaScript (ES6+)</li>
-					<li>JQuery</li>
-					<li>Node.js, Express.js</li>
-					<li>Next.js</li>
-				</ul>
-			</div>
-			<div class="skillset skillset-3">
-				<h3>Scripting</h3>
-				<ul>
-					<li>Python</li>
-					<li>[ NumPy, SciPy ]</li>
-					<li>[ Pandas, Matplotlib ]</li>
-					<li>Bash/Zsh/Pwsh</li>
-				</ul>
-			</div>
-			<div class="skillset skillset-4">
-				<h3>Database Management</h3>
-				<ul>
-					<li>MySQL</li>
-					<li>MongoDB</li>
-					<li>PostgreSQL</li>
-					<li>GraphQL</li>
-				</ul>
-			</div>
-			<div class="skillset skillset-5">
-				<h3>Tools and Tech</h3>
-				<ul>
-					<li>Sublime Text 💖</li>
-					<li>GitHub/Git</li>
-					<li>Adobe Photoshop</li>
-					<li>Adobe Illustrator</li>
-					<li>Figma</li>
-				</ul>
-			</div>
-			<div class="skillset skillset-6">
-				<h3>Fun Ones</h3>
-				<ul>
-					<li>Concept Art</li>
-					<li>Logos/Brand Designs</li>
-					<li>Web/App Design</li>
-					<li>Wallpaper Design</li>
-				</ul>
+	<div class="ultimate-wrapper">
+		<!-- HERO SECTION 🪐 -->
+		<div class="section section-1 hero">
+			<div class="hero_title">
+				<div class="cont">
+					<h1 class="animated-txt-rm holiday-tags" data-animatedtxt="Hey there!">Hey there!</h1>
+					<h1 class="greeting">Good Evenin'</h1>
+				</div>
+				<div class="special_cont"><h1 class="special clr_changer aud-click-one">I'm Amal Lalgi</h1></div>
+				<div class="hero_desc left">
+					<p>Yo, just gotta spill <span class="animated-txt" data-animatedtxt="a bit about me, fam!">a bit about me, fam!</span> ---- I'm all in on the code grind, turning those lines into digital wizardry. Design's my playground—mixing <span class="animated-txt" data-animatedtxt="pixels">pixels</span>, slapping <span class="animated-txt" data-animatedtxt="colors">colors</span>, making it all pop. And <span class="animated-txt" data-animatedtxt="art">art</span>? That's my secret sauce, adding that extra swag to <span class="animated-txt" data-animatedtxt="everything">everything</span> I touch. So, whether I'm smashing out code or dropping a digital <span class="animated-txt" data-animatedtxt="masterpiece">masterpiece</span>, I'm just vibin', doing my thing, keeping it 100.</p>
+				</div>
+				<h1 class="skill">Oh, and I love doin' Dev,<br>Design & Art Stuff.</h1>
+				<div class="hero_desc right">
+					<p>00 ich liebe es, <span class="animated-txt" data-animatedtxt='dev, design & kunst-zeug'>dev, design & kunst-zeug</span> zu machen.</p>
+					<p>01 amo hacer <span class="animated-txt" data-animatedtxt='desarrollo, diseño y cosas de arte'>desarrollo, diseño y cosas de arte</span>.</p>
+					<p>02 pertia ambitus <span class="animated-txt" data-animatedtxt='definitio paranoia'>definitio paranoia</span> est.</p>
+				</div>
 			</div>
 		</div>
-	</div>
-	<!-- game -->
-	<div class="game" id="game">
-		<h2 class="special__heading">let's play a <span class="game__modal__switch" onclick="gameModalToggle()">game</span></h2>
-		<hr class="hr--dashed">
-		<div class="cont">
-			<div class="cell cell-1" onclick="pokeClick()">
-				<img src="assets/images/sprites/pokemon-sprites/Base/Pokemon-(106).png" alt="">
+		 <hr> <!-- The Divider -->
+		<!-- SELECTED WORKS 🪐 -->
+		<div class="section section-2 works" id="works">
+			<div class="title-wrapper">
+				<h1 class="works_title">Selected Projects <img data-img="arrow-alt-med" class="glyph" src="assets/images/dependencies/red/arrow-alt-med.png" alt=""> </h1>
+				<h1 class="works_title">Selected Projects <img data-img="arrow-alt-med" class="glyph" src="assets/images/dependencies/red/arrow-alt-med.png" alt=""> </h1>
 			</div>
-			<div class="cell cell-2" onclick="pokeClick()">
-				<img src="assets/images/sprites/pokemon-sprites/Base/Pokemon-(287).png" alt="">
+			<div class="title-wrapper">
+				<h1 class="works_title title2">Selected Projects <img data-img="arrow-alt-med" class="glyph" src="assets/images/dependencies/red/arrow-alt-med.png" alt=""> </h1>
+				<h1 class="works_title title2">Selected Projects <img data-img="arrow-alt-med" class="glyph" src="assets/images/dependencies/red/arrow-alt-med.png" alt=""> </h1>
 			</div>
-			<div class="cell cell-3" onclick="pokeClick()">
-				<img src="assets/images/sprites/pokemon-sprites/Base/Pokemon-(478).png" alt="">
-			</div>
-		</div>
-		<hr class="hr--dashed">
-		<div class="luck">
-			<input type="text" class="code" placeholder="{ the secret word! }">
-			<button id="realBtn" class="luckBtn">Feeling Lucky?</button>
-		</div>
-	</div>
-	<!-- contact -->
-	<div class="contact" id="contact-loc">
-		<h2 class="special__heading">let's get in touch</h2>
-		<div class="cont">
-			<div class="box social">
-				<a target="blank" href="https://instagram.com/_u/TheAmalLalgi">Instagram ↗</a>
-				<a target="blank" href="https://twitter.com/AmalLalgi">Twitter ↗</a>
-				<a target="blank" href="https://github.com/TheAmalLalgi">GitHub ↗</a>
-				<a target="blank" href="https://codepen.io/theamallalgi">Codepen ↗</a>
-				<a target="blank" href="https://stackoverflow.com/users/16938644/amal-lalgi">StackOverflow ↗</a>
-				<a target="blank" href="https://pintrest.com/_u/amallalgi">Pintrest ↗</a>
-				<a target="blank" href="https://www.deviantart.com/amallalgi">DeviantArt ↗</a>
-				<a target="blank" href="https://www.linkedin.com/in/amal-lalgi-8b193521a/">LinkedIn ↗</a>
-				<a target="blank" href="mailto:theamallalgi@gmail.com">Email ↗</a>
-			</div>
-			<div class="box form">
-				<form action="https://formsubmit.co/amallalgi2487@gmail.com" method="POST">
-					<input type="text" placeholder="{ enter your name * }" name='name' required>
-					<input type="text" placeholder="{ enter your email id * }" name='email' required>
-					<input type="text" placeholder="{ enter the subject }">
-					<input type="hidden" name="_next" value="https://theamallalgi.pages.dev/pages/mail/main.html">
-					<input type="hidden" name="_template" value="table">
-					<input type="hidden" name="_subject" value="New Mail From Website 🐦">
-					<input type="hidden" name="_autoresponse" value="Thank you for Contacting Me. I will make sure that I'll look into what you have to say when I'm free!">
-					<textarea name="message" id="msg" cols="30" rows="10" placeholder="{ type something! * }" required></textarea>
-					<div class="btns">
-						<button id="realBtn" onclick="document.querySelector('form').reset()">CANCEL</button>
-						<input id="realBtn" type="submit" value="SEND">
+			<div class="cards">
+				<!-- CARD 1 -->
+				<div class="work_card work_card-1">
+					<div class="card">
+						<a href="#" target="blank"><img src="assets/images/boards/posters/bnsi.webp" alt="Bonsai"></a>
 					</div>
-				</form>
+				</div>
+				<!-- CARD 2 -->
+				<div class="work_card work_card-2">
+					<div class="card">
+						<a href="#" target="blank"><img src="assets/images/boards/posters/nrmki.webp" alt="Bonsai"></a>
+					</div>
+				</div>
+				<!-- CARD 3 -->
+				<div class="work_card work_card-3">
+					<div class="card">
+						<a href="pages/playlists/" target="blank"><img src="assets/images/boards/posters/brn.webp" alt="Brutal Ronin"></a>
+					</div>
+				</div>
+				<!-- CARD 4 -->
+				<div class="work_card work_card-4">
+					<div class="card">
+						<a href="pages/pyimg/" target="blank"><img src="assets/images/boards/posters/zscr.webp" alt="PyIMG"></a>
+					</div>
+				</div>
+				<!-- CARD 5 -->
+				<div class="work_card work_card-5">
+					<div class="card">
+						<a href="#" target="blank"><img src="assets/images/boards/posters/tbbt.webp" alt="The broken blade saga"></a>
+					</div>
+				</div>
+				<!-- CARD 6 -->
+				<div class="work_card work_card-6">
+					<div class="card">
+						<a href="#" target="blank"><img src="assets/images/boards/posters/frem.webp" alt="Frozen Embers"></a>
+					</div>
+				</div>
+			</div>
+			<div class="more"><h2><a href="assets/pages/">See More Works</a></h2></div>
+		</div>
+		<hr> <!-- The Divider -->
+		<!-- ABOUT ME 🪐 -->
+		<div class="section section-4 about" id="about">
+			<div class="title-wrapper">
+				<h1 class="about_title">J'st a Bit 'bout me <img data-img="coin" src="assets/images/dependencies/red/coin.png" alt="" class="glyph"></h1>
+				<h1 class="about_title">J'st a Bit 'bout me <img data-img="coin" src="assets/images/dependencies/red/coin.png" alt="" class="glyph"></h1>
+			</div>
+			<div class="title-wrapper">
+				<h1 class="about_title title2">J'st a Bit 'bout me <img data-img="coin" src="assets/images/dependencies/red/coin.png" alt="" class="glyph"></h1>
+				<h1 class="about_title title2">J'st a Bit 'bout me <img data-img="coin" src="assets/images/dependencies/red/coin.png" alt="" class="glyph"></h1>
+			</div>		
+			<div class="about_paras">
+				<div class="text_cont">
+					<div class="main-desc">
+						<p class="animated-txt-rm" data-animatedtxt="I Design 'nd Develop Websites 'nd Apps">I Design 'nd Develop Websites 'nd Apps</p>
+					</div>
+					<div class="left">
+						<p class="para para-1">Hey, I'm Amal! An All-encompassing developer, designer, artist and a proud elvis fan from India based in India too (for now!). Everything I do has got atleast something to do with Programming, designing or pretty much anything related to Art. The site you see here is more meant to be a playground for the stuff I do.</p>
+						<p class="para para-2">My passion lies in crafting immersive digital experiences where design meets code. Whether it's weaving the intricate threads of websites, sculpting the landscape of web applications or indie game worlds, engineering full-stack applications, I'm in my element. Combining design finesse with coding wizardry, I breathe life into digital realms that captivate and engage.</p>
+						<p class="para para-3">As of 2023, I am still in India, nose deep in my studies and rarely outside. I just finished my Schooling and I'm about to begin a fresh life, just like this new website. (Beta Website, that is!) Hmmm, funny - It feels like i'll forget to take this part down!</p>
+					</div>
+					<div class="right title-wrapper">
+						<!-- featured in places -->
+						<p class="news">This website was made for fun and I m currently not looking for jobs (I do occational freelancing though!) * Just email me or reach out to me on my socials, we'll figure it out! * </p>
+						<p class="news">This website was made for fun and I m currently not looking for jobs (I do occational freelancing though!) * Just email me or reach out to me on my socials, we'll figure it out! * </p>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-	<!-- footer -->
-	<footer>
-		<h4>designed and developed by <a href="#">Amal Lalgi</a></h4>
-		<div class="footer__icons">
-			<a target="blank" href="https://github.com/TheAmalLalgi/TheAmalLalgi.github.io"><i class="fas fa-folder"></i></a>
-			<a target="blank" href="https://instagram.com/_u/TheAmalLalgi"><i class="fab fa-instagram"></i></a>
-			<a target="blank" href="https://twitter.com/AmalLalgi"><i class="fab fa-twitter"></i></a>
-			<a target="blank" href="https://www.linkedin.com/in/amal-lalgi-8b193521a/"><i class="fab fa-linkedin"></i></a>
-			<a target="blank" href="https://www.deviantart.com/amallalgi"><i class="fab fa-deviantart"></i></a>
-			<a target="blank" href="https://dribbble.com/TheAmalLalgi"><i class="fab fa-dribbble"></i></a>
-			<a target="blank" href="https://www.behance.net/amallalgi"><i class="fab fa-behance"></i></a>
-			<a target="blank" href="https://codepen.io/theamallalgi"><i class="fab fa-codepen"></i></a>
-			<a target="blank" href="https://github.com/TheAmalLalgi"><i class="fab fa-github-alt"></i></a>
+		<hr> <!-- The Divider -->
+		<!-- FUN 🪐 -->
+		<div class="section section-3 entermouth" id="entermouth">
+			<div class="title-wrapper">
+				<h1 class="entermouth_title">How 'bout lil fun <img data-img="question" class="glyph" src="assets/images/dependencies/red/question.png" alt=""></h1>
+				<h1 class="entermouth_title">How 'bout lil fun <img data-img="question" class="glyph" src="assets/images/dependencies/red/question.png" alt=""></h1>
+			</div>
+			<div class="title-wrapper">
+				<h1 class="entermouth_title title2">How 'bout lil fun <img data-img="question" class="glyph" src="assets/images/dependencies/red/question.png" alt=""></h1>
+				<h1 class="entermouth_title title2">How 'bout lil fun <img data-img="question" class="glyph" src="assets/images/dependencies/red/question.png" alt=""></h1>
+			</div>	
+			<div class="poke_counter">
+				<div class="pokeClick poke_img poke_img-1 aud-click-two"><img src="assets/images/sprites/ghost.png" alt="pokemon"></div>
+				<div class="pokeClick poke_img poke_img-2 aud-click-two"><img src="assets/images/sprites/ghost.png" alt="pokemon"></div>
+				<div class="pokeClick poke_img poke_img-3 aud-click-two"><img src="assets/images/sprites/ghost.png" alt="pokemon"></div>
+				<div class="pokeClick poke_img poke_img-4 aud-click-two"><img src="assets/images/sprites/ghost.png" alt="pokemon"></div>
+			</div>
+			<form class="fun" onsubmit="submitForm(event)">
+				<input type="text" class="enterMouthArea" autocomplete="off" id="The Entermouth" name="theentermouth" placeholder="What's the Word?" autocomplete="fun stuff">
+				<input type="submit" value="Enter" class="enterMouthBtn aud-click-one">
+			</form>
 		</div>
-		<div class="footer__nav">
-			<ul>
-				<li><a href="#home-loc">Home page</a></li>
-				<li><a href="#about-loc">About me</a></li>
-				<li><a href="pages/works/index.html">Art gallery</a></li>
-				<li><a href="pages/works/index.html">Code works</a></li>
-				<li><a href="#contact-loc">Contact me</a></li>
-				<li><a href="#game">Mini game</a></li>
-				<li><a href="#skills-loc">My skills</a></li>
-			</ul>
+		<div class="fun_desc output-tab">
+			<p>Ready to unlock the secrets? Dive into the Enter Mouth. Type your query, whisper a mystery, or unleash a riddle. Go ahead, click on the bar [theEnterMouth] and type in something fun. Let's see what happens! Type 'help' to see some keywords.</p>
+		</div>
+		<hr> <!-- The Divider -->
+		<!-- RANDOM SECTION 🪐 -->
+		<div class="random">
+			<h1 class="message">Be on the <span class="special">Right</span><br>Side of History</h1>
+			<img src="assets/images/boards/backdrops/blue.png" class="copy_btn random_backdrop" onclick="musicFive.play();" data-copy="Bird is the Word!" alt="colored backdrop">
+		</div>
+		<!-- <hr> The Divider -->
+		<!-- CONTACT ME 🪐 -->
+		<div class="section section-6 contact" id="contact">
+			<div class="contact_cont">
+				<div class="title-wrapper">
+					<h1 class="contact_title">J'st Drop Me a Line <img data-img="sun" src="assets/images/dependencies/red/sun.png" alt="" class="glyph"></h1>
+					<h1 class="contact_title">J'st Drop Me a Line <img data-img="sun" src="assets/images/dependencies/red/sun.png" alt="" class="glyph"></h1>
+					<h1 class="contact_title">J'st Drop Me a Line <img data-img="sun" src="assets/images/dependencies/red/sun.png" alt="" class="glyph"></h1>
+				</div>
+				<div class="title-wrapper">
+					<h1 class="contact_title title2">J'st Drop Me a Line <img data-img="sun" src="assets/images/dependencies/red/sun.png" alt="" class="glyph"></h1>
+					<h1 class="contact_title title2">J'st Drop Me a Line <img data-img="sun" src="assets/images/dependencies/red/sun.png" alt="" class="glyph"></h1>
+				</div>
+				<div class="cards">
+					<div class="card card-1">
+						<div class="link_cont-1 link_cont">
+							<div class="form links links-0">
+								<form action="https://formsubmit.co/amallalgi2487@gmail.com" method="POST">
+									<!-- Form Submit -->
+									<input type="hidden" name="_next" value="https://theamallalgi.pages.dev/pages/messages/thanks/">
+									<input type="hidden" name="_captcha" value="false">
+									<input type="hidden" name="_subject" value="Mail from Portfolio 🐦">
+									<input type="hidden" name="_cc" value="theamallalgi@gmail.com">
+									<input type="hidden" name="_template" value="box">
+									<input type="text" name="name" required placeholder="your full_name* is..">
+									<input type="email" name="email" required placeholder="your email_id* is..">
+									<textarea required name="message" id="content" cols="30" rows="10" placeholder="and your mess_age* is..."></textarea>
+									<div class="btns">
+										<button class="cancel aud-click-four">reset?</button>
+										<button type="submit" class="submit aud-click-five">submit!</button>
+									</div>
+								</form>
+							</div>
+							<div class="index links links-1">
+								<h2 class="label">The Index</h2>
+								<ul>
+									<li><a href="#home">Home</a></li>
+									<li><a href="assets/pages/">Works</a></li>
+									<li><a href="#about">About</a></li>
+									<li><a href="#contact">Contact</a></li>
+								</ul>
+								<ul>
+									<li><a href="#">FAQ</a></li>
+									<li><a href="#entermouth">EnterMouth</a></li>
+								</ul>
+							</div>
+							<div class="social links links-2">
+								<h2 class="label">The Socials Section</h2>
+								<ul>
+									<li><a class="fun-link" data-animatedtxt="Email: amallalgi" href="mailto:theamallalgi@gmail.com">Email: amallalgi</a></li>
+									<li><a class="fun-link" target="blank" data-animatedtxt="X (Not Twitter)" href="https://twitter.com/amallalgi">X (Not Twitter)</a></li>
+									<li><a class="fun-link" target="blank" data-animatedtxt="Instagram" href="https://instagram.com/_u/theamallalgi">Instagram</a></li>
+									<li><a class="fun-link" target="blank" data-animatedtxt="Github" href="https://github.com/theamallalgi">Github</a></li>
+									<li><a class="fun-link" target="blank" data-animatedtxt="StackOverflow" href="https://stackoverflow.com/users/16938644/amal-lalgi">StackOverflow</a></li>
+									<li><a class="fun-link" target="blank" data-animatedtxt="Pintrest" href="https://pintrest.com/_u/amallalgi">Pintrest</a></li>
+									<li><a class="fun-link" target="blank" data-animatedtxt="DeviantArt" href="https://www.deviantart.com/amallalgi">DeviantArt</a></li>
+									<li><a class="fun-link" target="blank" data-animatedtxt="LinkedIn" href="https://linkedin.com/in/amallalgi">LinkedIn</a></li>
+									<li><a class="fun-link" target="blank" data-animatedtxt="Threads" href="https://www.threads.net/@theamallalgi">Threads</a></li>
+									<li><a class="fun-link" target="blank" data-animatedtxt="Telegram" href="https://t.me/theamallalgi">Telegram</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="link_cont-2 link_cont"></div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>	
+	<!-- FOOTER 🪐 -->
+	<footer class="music_player">
+		<div class="left">
+			<p class="year">@2023</p>
+			<p class="time">[00:00 IST/00:00 CET]</p>
+			<p class="location">[internet/tal/files/portfolio/index.html]</p>
+			<p class="version">(0.4.3)</p>
+		</div>	
+		<div class="right">
+			<p class="music"></p>
+			<img src="assets/images/dependencies/white/icon-s.png" alt="Logo" class="logo">
 		</div>
 	</footer>
 </body>
 </html>
-
-<!-- the end 😁 -->
