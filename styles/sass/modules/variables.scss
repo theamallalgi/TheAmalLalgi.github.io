@@ -1,20 +1,134 @@
-// variables
-$ff-p: 'Grtsk Mega Font', 'Grtsk Mega', sans-serif;
-$ff-s: 'Cartograph CF Font', 'Cartograph CF', monospace;
-
-$blk: #0f0f0f;
-$wht: #ffffdf;
-$prpl: #a126f9;
-$gry: #5e5e5e;
-$grn: #0ac87e;
-$red: #f92472;
-$blu: #26B7F9;
-$ylw: #F9A826;
-$cyn: #26F9EB;
-
-// universal CSS variables
-html {
-	--nav-height: 5rem;
+// Media
+// ------------------------------
+@mixin tablet() { // media query for tablet and above
+	@media (min-width: 768px) {
+		@content;
+	}
 }
 
-// the end 😁
+@mixin laptop() { // media query for laptops and above
+	@media (min-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin bp1() { // media query for laptops and above
+	@media (min-width: 1176px) {
+		@content;
+	}
+}
+
+@mixin bp($min-width) { // media query for laptops and above
+	@media (min-width: $min-width) {
+		@content;
+	}
+}
+
+// Functions
+@mixin scroll-heads($animation-name) {
+	display: inline-block;
+	animation: $animation-name linear;
+	animation-timeline: scroll(root);
+	margin-right: 1rem;
+	user-select: none;
+}
+
+// Colors
+// ------------------------------
+:root { // global css variables (colors)
+  	--blk: #0f0f0f;
+	--wht: #ffffdf;
+	--prpl: #a126f9;
+	--gry: #5e5e5e;
+	--grn: #0ac87e;
+	--red: #f71a1a;
+	--blu: #375fff;
+	--ylw: #ff9900;
+	--cyn: #00cdb9;
+	--blks: #171717;
+	--grys: #848484;
+	--grns: #0bee96;
+	--reds: #f71a1a;
+	--blus: #46c1f9;
+	--ylws: #ffba26;
+	--cyns: #26feff;
+	--trnsp-bg-blk: #0f0f0f80;
+	--c1: rgb(95, 95, 95);
+	--c2: rgb(65, 65, 65);
+	--c3: rgb(45, 45, 45);
+}
+
+:root { // local css variables (colors)
+	--acc: var(--red);
+	--bgc: var(--blk);
+	--fgc: var(--wht);
+	--bgsc: var(--blks);
+	--fgsc: var(--grys);
+	--fg1: var(--c1);
+	--fg2: var(--c2);
+	--fg3: var(--c3);
+	--scroll-padding: 2rem;
+	--crs-loc: url('../../assets/images/dependencies/red/arrow-bg.png');
+}
+
+// local scss variables
+$acc: var(--acc);
+$bgc: var(--bgc);
+$fgc: var(--fgc);
+$bgsc: var(--bgsc);
+$fgsc: var(--fgsc);
+$trnspbg: var(--trnsp-bg-blk);
+
+// Fonts
+// ------------------------------
+$fp: 'Impact Font', sans-serif;
+$fs: 'Jetbrains Mono Font', monospace;
+$fa: 'Noto Sans JP', $fp;
+
+// Color Theme Switch
+[data-theme="dark"] {
+    --bgc: var(--blk);
+    --fgc: var(--wht);
+    --bgsc: var(--blks);
+    --fgsc: var(--grys);
+    --fg1: var(--c1);
+    --fg2: var(--c2);
+    --fg3: var(--c3);
+    --accordion: #818181;
+    --shdw: rgba(0, 0, 0, 0.9);
+}
+
+[data-theme="light"] {
+    --bgc: #ffdf92;
+	--fgc: #181818;
+	--bgsc: #ffd97f;
+	--fgsc: #a18a4d;
+	--fg1: rgb(167 139 73);
+	--fg2: rgb(207 169 95);
+	--fg3: rgb(241 198 118);
+	--accordion: #7f7260;
+	--shdw: #392f199e;
+}
+
+[data-theme="paranoid"] {
+	/* CSS HEX */
+	--oxford-blue: #051E31ff;
+	--plum-web: #DB9CE1ff;
+	--federal-blue: #07155Aff;
+	--rich-black: #06141Fff;
+	--russian-violet: #362752ff;
+	--amaranth-purple: #9A1542ff;
+	--flame: #D06C3Fff;
+	--yale-blue: #06396Aff;
+	--persian-blue: #1831D1ff;
+
+    --bgc: var(--rich-black);
+	--fgc: var(--plum-web);
+	--bgsc: var(--oxford-blue);
+	--fgsc: var(--flame);
+	--fg1: var(--amaranth-purple);
+	--fg2: var(--amaranth-purple);
+	--fg3: var(--russian-violet);
+	--accordion: var(--fgc);
+	--shdw: #02070a;
+}

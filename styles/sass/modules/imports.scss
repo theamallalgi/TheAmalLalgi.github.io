@@ -1,16 +1,12 @@
-// files
-@import "./themes.scss";
-@import "./variables.scss";
-@import "./media.scss";
+// File Imports
+@import 'variables';
 
-// fonts
+// Fonts
 @font-face {
-    font-family: 'Grtsk Mega Font';
-    src: local('Grtsk Mega'), url('../../../assets/fonts/grtsk-mega/GrtskMega-Bold.ttf');
+    font-family: 'Jetbrains Mono Font';
+    src: local('Jetbrains Mono'), url('../../assets/fonts/jbmonov.ttf');
 }
 @font-face {
-    font-family: 'Cartograph CF Font';
-    src: local('Cartograph CF'), url('../../../assets/fonts/cartograph-cf/CartographCF-DemiBold.otf');
+    font-family: 'Impact Font';
+    src: local('Impact'), url('../../assets/fonts/impact.ttf');
 }
-
-// the end 😁
