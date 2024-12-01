@@ -1,0 +1,334 @@
+@mixin tablet() {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin laptop() {
+	@media (min-width: 1024px) {
+		@content;
+	}
+}
+
+@font-face {
+    font-family: 'Grtsk Mega Font';
+    src: local('Grtsk Mega'), url('../../assets/fonts/grtskm.ttf');
+}
+@font-face {
+    font-family: 'American Typewriter Font';
+    src: local('American Typewriter'), url('../../assets/fonts/atr.ttf');
+}
+@font-face {
+    font-family: 'Cartograph CF Font';
+    src: local('Cartograph CF'), url('../../assets/fonts/ccf.otf');
+}
+@font-face {
+    font-family: 'Panchang Font';
+    src: local('Panchang'), url('../../assets/fonts/pb.woff');
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	gap: 1.25rem;
+}
+
+::selection {
+	background-color: #28ff1a;
+	color: #0f0f0f; // #020f01
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+img {
+	user-drag: none;  
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+body {
+	background-color: #0f0f0f;
+	font-family: 'Cartograph CF Font', 'American Typewriter Font', monospace;
+	color: #767676;
+}
+
+hr {
+	background-color: #434343;
+	height: 0.1rem;
+	border: none;
+	outline: none;
+	margin-block: 1rem;
+}
+
+h2.title_text {
+	color: #28ff1a;
+	font-size: 2.2rem;
+	letter-spacing: -1px;
+	font-family: 'Panchang Font', sans-serif;
+	line-height: 1;
+	margin: 1.25rem;
+	img {
+		width: 4.6rem;
+		margin-left: 1rem;
+	}
+	@include tablet() {font-size: 4rem; line-height: 1.25;}
+	@include laptop() { font-size: 5.7rem; line-height: 1;}
+}
+
+nav {
+	padding: 1rem 1.25rem;
+	display: flex;
+	align-items: start;
+	flex-direction: column;
+	justify-content: space-between;
+	@include laptop() { padding-top: 1.5rem; flex-direction: row;}
+	h1 {
+		font-family: 'Cartograph CF Font', 'American Typewriter Font', monospace;
+		color: #434343;
+		font-size: 1.5rem;
+		@include laptop() { font-size: 1.75rem }
+		a {
+			color: #767676;
+			font-family: 'Cartograph CF Font', 'American Typewriter Font', monospace;
+			text-decoration: none;
+			&:hover {
+				color: #9c9c9c;
+			}
+		}
+		a + a {
+			&::before {
+				content: ' > ';
+				font-family: 'Cartograph CF Font', 'American Typewriter Font', monospace;
+				color: #434343;
+				font-size: 1.25rem;
+			}
+		}
+	}
+	h2 {
+		font-family: 'Cartograph CF Font', 'American Typewriter Font', monospace;
+		font-size: 1.25rem;
+		color: #767676;
+		text-align: left;
+		@include laptop() { font-size: 1.75rem; text-align: right; }
+	}
+	.nav_cont {
+		h2 {
+			color: #434343;
+		}
+	}
+}
+
+.section {
+	max-width: 100%;
+	width: 100%;
+	height: 100%;
+	padding: 1rem 1.25rem;
+	color: #767676;
+	h1 {
+		color: #9c9c9c;
+	}
+}
+
+.main {
+	display: flex;
+	align-items: start;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-top: 3rem;
+	@include laptop() { padding-top: 1.5rem; flex-direction: row; margin-top: 5rem;}
+	.top {
+		max-width: 55ch;
+		ul li {
+			list-style: none;
+			p {
+				color: #767676;
+				.details {
+					color: #434343;
+				}
+			}
+		}
+		ul {
+			li + li {
+				margin-top: 1.25rem;
+			}
+		}
+	}
+	.btm {
+		bottom: 0;
+		margin-bottom: 1rem;
+		margin-top: 2rem;
+		@include laptop() { margin-top: 0; }
+	}
+
+	.cot {
+		color: #434343;
+		margin-top: 1.25rem;
+		margin-bottom: 2rem;
+		a {
+			color: #28ff1a;
+			&::before { content: '{'; margin-right: 0.35rem;}
+			&::after { content: '}'; margin-left: 0.35rem;}
+			&::before, &::after {
+				color: #434343;
+			}
+			text-decoration: none;
+			&:hover {
+				font-style: italic;
+				&::before, &::after { font-style: normal; }
+			}
+		}
+	}
+
+	p {
+		max-width: 70ch;
+		font-family: 'Cartograph CF Font', 'American Typewriter Font', monospace;
+		font-size: 1.25rem;
+		margin-bottom: 1rem;
+		@include laptop() { font-size: 1.5rem }
+	}
+}
+
+.imgs-1, .imgs-2, .imgs-3 {
+	padding: 1rem 1.25rem;
+	img {
+		width: 100%;
+	}
+	img + img {
+		margin-top: 0.5rem;
+		@include laptop() { margin-top: 1.5rem; }
+	}
+}
+
+.imgs-1, .imgs-3 {
+	margin-top: 3rem;
+	@include laptop() { margin-top: 2rem; }
+}
+.imgs-2 {
+	margin-bottom: 3rem;
+	@include laptop() {margin-bottom: 2rem;}
+}
+
+.why {
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+	width: 100%;
+	flex-direction: column;
+	margin-top: 3rem;
+	@include laptop() { flex-direction: row; margin-top: 2rem;}
+	p {
+		text-align: left;
+		max-width: 54ch;
+		font-size: 1.25rem;
+		@include laptop() { font-size: 1.5rem; text-align: right; }
+	}
+}
+
+.how_title {
+	padding-bottom: 0;
+}
+
+.how {
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+	gap: 1.25rem;
+	flex-direction: column;
+	@include tablet() {flex-direction: row;}
+	@include laptop() { flex-direction: row; }
+	p {
+		text-align: left;
+		max-width: 35ch;
+		font-size: 1.25rem;
+		@include laptop() { font-size: 1.45rem;}
+	}
+	.left p:last-child { color: #434343; }
+	.right {
+		p {
+			font-size: 1.25rem;
+			max-width: 55ch;
+		}
+		ol {
+			margin-top: 1rem;
+			list-style: none; /* Remove default list markers */
+  			counter-reset: my-counter; /* Initialize a counter */
+  			li {
+				text-align: left;
+				color: #434343;
+				max-width: 55ch;
+				font-size: 1.25rem;
+			    &:before {
+			    	content: "(" counter(my-counter) ") "; /* Use counter values in parentheses */
+				    counter-increment: my-counter; /* Increment the counter */
+			    }
+  			}
+		}
+	}
+}
+
+.end {
+	padding-bottom: 2rem;
+	margin-top: 3rem;
+	@include laptop() { margin-top: 2rem; }
+	p {
+		margin-top: 1.25rem;
+		max-width: 55ch;
+		color: #434343;
+		font-size: 1.25rem;
+		@include laptop() { font-size: 1.5rem; }
+		&.end_credits {text-align-last: justify;}
+	}
+	.footer {
+		margin-top: 3rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: start;
+		flex-direction: column;
+		font-family: 'Cartograph CF Font', 'American Typewriter Font', monospace;
+		color: #434343;
+		@include tablet() {flex-direction: row;}
+		@include laptop() { margin-top: 1rem; flex-direction: row; align-items: end;}
+		a {
+			color: #767676;
+			font-size: 2rem;
+			font-family: 'Cartograph CF Font', 'American Typewriter Font', monospace;
+			text-decoration: none;
+			&:hover {
+				color: #9c9c9c;
+			}
+		}
+		li {
+			list-style: none;
+			text-align: left;
+			@include tablet() {text-align: right;}
+		}
+		li + li {
+			margin-top: 0.5rem;
+		}
+		.lft h1 a {
+			font-size: 3rem;
+			@include laptop() { font-size: 5rem; }
+		}
+	}
+}
+
+.end_link {
+	a {
+		color: #434343;
+		&::before { content: '{'; margin-right: 0.35rem;}
+		&::after { content: '}'; margin-left: 0.35rem;}
+		&::before, &::after {
+			color: #434343;
+		}
+		text-decoration: none;
+		&:hover {
+			color: #28ff1a;
+		}
+	}
+}

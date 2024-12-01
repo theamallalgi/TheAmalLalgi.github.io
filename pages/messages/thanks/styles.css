@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Impact Font';
+    src: local('Impact'), url('../../../assets/fonts/impact.ttf');
+}
+@font-face {
+    font-family: 'Jetbrains Mono Font';
+    src: local('Jetbrains Mono NF'), url('../../../assets/fonts/jbmonov.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #181818;
+    color: #f71a1a;
+    font-family: 'Impact Font';
+    letter-spacing: 1px;
+    padding: 1rem 1.25rem;
+    text-align: left;
+}
+
+h1#main {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+button, a {
+    border: none;
+    font-family: 'Jetbrains Mono Font';
+    font-size: 2rem;
+    background: none;
+    color: #f71a1a;
+    cursor: pointer;
+    margin-top: 1.25rem;
+    text-decoration: none;
+}
+button:hover, button:focus-visible, a:hover, a:focus-visible {
+    text-decoration: underline;
+}
+
+@media (min-width: 680px) {
+    .left {
+        max-width: 45vw;
+        margin-left: auto;
+    }
+}
